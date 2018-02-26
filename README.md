@@ -40,6 +40,9 @@ Depends on the backend choice
 
 ## Sitemap draft
 A sitemap to get a overview of the basic structure at the start of the project.
+This is to give myself a overview of the minimum needed for now.
+
+<img src="https://github.com/kyunwang/my-wants/blob/master/doc-img/sitemap-draft.jpg" alt="A draft of the sitemap" height="">
 
 ## Technology choices
 I need to make a decision of what technology/tools to use for the application.
@@ -89,23 +92,26 @@ Never used the graphql option but they seem interesting.
 **For starters, I will use `AsyncStorage` and build upon that later on with a cloudbased or maybe a custom backend**
 
 ### Others
-Maybe look into:
+**Maybe look into:**
 - [Pusher](#pusher)
 - [FastLane](#fastlane)
 - [Visual Studio App Center](#app-center)
 - [](#)
 - [](#)
 
-Analytics options:
+**Analytics options:**
 - [google-analytics](#google-analytics)
 - [matomo](#matomo) possible to use with RN?
 - [VS - App Center](#app-center-analytics)
 
-Testing: 
+**Testing:**
 - [Cavy](#cavy) Looks neat
 - [Jest](#jest)
 
 *What do I want ot test? Do I even need tests here?*
+
+
+
 
 [trello]: https://trello.com/b/4JgtyCTK
 
