@@ -38,6 +38,9 @@ The minimal function wanted/needed for this application are:
 Depends on the backend choice
 - Sync across account/platforms
 
+**Maybe fun to add**
+- Change colors (primary color or per item based)
+
 ## Sitemap draft
 A sitemap to get a overview of the basic structure at the start of the project.
 This is to give myself a overview of the minimum needed for now.
@@ -53,9 +56,10 @@ And am looking into other stuff like Continious Integration. (maybe)
 These are the ones I am considering to use. I already have some experience with *React-Native*
 
 The choices/considerations:
-- **React-Native (Web)**
-- Weex (Web)
-- Native-script (Web)
+- **React-Native (Cross)**
+- Weex (Cross)
+- Native-script (Cross)
+- Flutter (Cross) - uses dart
 - Swift (iOS)
 - Objective-C (iOS)
 - Kotlin (Android)
@@ -107,8 +111,12 @@ Never used the graphql option but they seem interesting.
 **Testing:**
 - [Cavy](#cavy) Looks neat
 - [Jest](#jest)
+- [Enzyme]
+- [Mocha/Chai]
 
-*What do I want ot test? Do I even need tests here?*
+*What do I want to test? Do I even need tests here?*
+
+
 
 
 
