@@ -174,5 +174,5 @@ Tried out Diya plugin of Sketch. It is pretty nice, but sadly the exporting to a
 [sketch1]: https://github.com/kyunwang/my-wants/blob/master/doc-img/sk_layout.jpg
 [sketch2]: https://github.com/kyunwang/my-wants/blob/master/doc-img/sk_comp.jpg
 
-[anim1]: https://github.com/kyunwang/my-wants/blob/master/doc-img/animation1.jpg
-[screens1]: https://github.com/kyunwang/my-wants/blob/master/doc-img/screens1.jpg
+[anim1]: https://github.com/kyunwang/my-wants/blob/master/doc-img/animation1.gif
+[screens1]: https://github.com/kyunwang/my-wants/blob/master/doc-img/screens1.png
