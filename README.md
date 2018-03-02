@@ -138,12 +138,12 @@ Yes I am being messy.
 ### Screens
 The current screens.
 
-<img src="https://github.com/kyunwang/my-wants/blob/master/doc-img/sk_comp.jpg" alt="sketch 2" height="450">
+<img src="https://github.com/kyunwang/my-wants/blob/master/doc-img/screens1.png" alt="first 4 screens" height="400">
 
 The current screen for development. They will of course change along the way.
 Some things are not realy consistent yet like the positioning of the buttons.
 
-![Animation prototype 1](#anim1)
+<img src="https://github.com/kyunwang/my-wants/blob/master/doc-img/animation1.gif" alt="a small prototype animation" height="">
 
 Here a little animation, which I think I will implement. (well try to implement) 😉
 
