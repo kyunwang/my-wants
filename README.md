@@ -15,7 +15,9 @@ In this document I record my process and decisions of the making of this applica
 	- [Front-end](#front-end)
 	- [Back-end](#back-end)
 	- [Others](#others)
-- [](#)
+- [The look](#the-look)
+	- [Sketches](#sketches)
+	- [Screens](#screens)
 
 
 ## Minimal Functionality
@@ -111,13 +113,20 @@ Never used the graphql option but they seem interesting.
 - [VS - App Center](#app-center-analytics)
 
 **Testing:**
-- [Cavy](#cavy) Looks neat
-- [Jest](#jest)
+- [Cavy](#cavy) Looks neat (E2E testing)
+- [Jest](#jest) 
 - [Enzyme]
 - [Mocha/Chai]
 
-*What do I want to test? Do I even need tests here?*
 
+First question: *What do I want to test? Do I even need tests here?*
+
+
+
+Cavy talk at [React-Native-London](#rn-london)
+- Cavy does **leak** to the production bundle - need to write a own config to bypass that
+
+This is probably the wayt to prevent the leaking: [Here](#cavy-prevent-leak) and the [Example](#cavy-prevent-leak-repo)
 
 
 ## The look
@@ -167,7 +176,9 @@ Tried out Diya plugin of Sketch. It is pretty nice, but sadly the exporting to a
 [jest]: https://facebook.github.io/jest/
 [c]: c
 
-
+[rn-london]: https://pusher.com/sessions/meetup/react-native-london/cavy-a-new-end-to-end-testing-framework-for-react-native?utm_source=reactnl&utm_medium=email
+[cavy-prevent-leak]: https://github.com/pixielabs/cavy/pull/20
+[cavy-prevent-leak]: https://github.com/TGPSKI/cavy/tree/add-jenkins-reporting/sample-app/EmployeeDirectory
 
 [sitemap1]: https://github.com/kyunwang/my-wants/blob/master/doc-img/sitemap-draft.jpg
 
