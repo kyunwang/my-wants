@@ -5,6 +5,8 @@ In this document I record my process and decisions of the making of this applica
 
 **Progress/Trello: [Here](#trello)**
 
+*Some more attachements will be placed in trello*
+
 ## Table of content
 
 - [Minimal functionality](#minimal-functionality)
@@ -118,6 +120,34 @@ Never used the graphql option but they seem interesting.
 
 
 
+## The look
+Super brief: the design for now
+
+### Sketches
+Sketches of possible layouts and some components.
+
+<img src="https://github.com/kyunwang/my-wants/blob/master/doc-img/sk_layout.jpg" alt="sketch 1" height="400">
+
+Some sketches for possible layouts to use.
+
+<img src="https://github.com/kyunwang/my-wants/blob/master/doc-img/sk_comp.jpg" alt="sketch 2" height="400">
+
+A few sketches of components variations.
+Yes I am being messy.
+
+### Screens
+The current screens.
+
+<img src="https://github.com/kyunwang/my-wants/blob/master/doc-img/sk_comp.jpg" alt="sketch 2" height="450">
+
+The current screen for development. They will of course change along the way.
+Some things are not realy consistent yet like the positioning of the buttons.
+
+![Animation prototype 1](#anim1)
+
+Here a little animation, which I think I will implement. (well try to implement) 😉
+
+Tried out Diya plugin of Sketch. It is pretty nice, but sadly the exporting to a interactive prototype didn't seem to work for some reason.
 
 
 
@@ -136,3 +166,13 @@ Never used the graphql option but they seem interesting.
 [cavy]: https://github.com/pixielabs/cavy
 [jest]: https://facebook.github.io/jest/
 [c]: c
+
+
+
+[sitemap1]: https://github.com/kyunwang/my-wants/blob/master/doc-img/sitemap-draft.jpg
+
+[sketch1]: https://github.com/kyunwang/my-wants/blob/master/doc-img/sk_layout.jpg
+[sketch2]: https://github.com/kyunwang/my-wants/blob/master/doc-img/sk_comp.jpg
+
+[anim1]: https://github.com/kyunwang/my-wants/blob/master/doc-img/animation1.jpg
+[screens1]: https://github.com/kyunwang/my-wants/blob/master/doc-img/screens1.jpg
