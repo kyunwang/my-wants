@@ -224,6 +224,18 @@ We will do it with the wrapper like so:
 
 ### Setting up a Router
 
+Thinking about using:
+- [React native router flux](#router1)
+Have used this before. Pretty easy syntax. Had some problems when needing som customisation
+- [React navigation](#router2)
+The syntax seems a bit verbose. (Pretty much the 'official' navigator)
+- [React native navigation](#router3) By Wix
+Seems pretty cool, Solid but a bit overwelming doc (Has a lot of issues active)
+
+Have decided to use **React navigation** for now. Was caught in between react navigationa dn react native navigation.
+
+
+
 
 [trello]: https://trello.com/b/4JgtyCTK
 
@@ -252,3 +264,7 @@ We will do it with the wrapper like so:
 
 [anim1]: https://github.com/kyunwang/my-wants/blob/master/doc-img/animation1.gif
 [screens1]: https://github.com/kyunwang/my-wants/blob/master/doc-img/screens1.png
+
+[router1]: https://github.com/aksonov/react-native-router-flux
+[router2]: https://reactnavigation.org/
+[router3]: https://wix.github.io/react-native-navigation/
