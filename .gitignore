@@ -1,8 +1,5 @@
 # See https://help.github.com/ignore-files/ for more about ignoring files.
 
-# expo
-.expo
-
 # dependencies
 node_modules
 
@@ -19,3 +16,6 @@ yarn-error.log*
 
 # Others
 LOCAL_ONLY
+
+.vscode
+.expo
