@@ -2,27 +2,23 @@ import React, { PureComponent } from 'react';
 
 import { Tester, TestHookStore } from 'cavy';
 
-import GLOBAL from './app/helpers/globals.js';
 import MyWantsApp from './app/MyWantsApp';
 
+import GLOBAL from './app/helpers/globals';
+
 if (GLOBAL.TEST_ENABLED) {
-	// if (GLOBAL.API_URL !== 'stage') {console.error('You are running tests on prod!')} else {...
-
-	var testHookStore = new TestHookStore();
-	console.ignoredYellowBox = ['A component for'];
-
 	const TestSuites = require('./specs/AppSpec.js');
-	console.log(TestSuites);
-
-
-	// // Test Suites ////
+	// Has to be var or else it will not work
+	var testHookStore = new TestHookStore();
 	var testSuitesArray = [TestSuites.test];
 
-	const testApiParams = {
-		url: 'http://localhost:3003/jenkins',
-		method: 'POST',
-		headers: { 'Content-Type': 'application/json' },
-	};
+	// console.ignoredYellowBox = ['A component for'];
+
+	// const testApiParams = {
+	// 	url: 'http://localhost:3003/jenkins',
+	// 	method: 'POST',
+	// 	headers: { 'Content-Type': 'application/json' },
+	// };
 }
 
 class AppWrapper extends PureComponent {
@@ -32,10 +28,10 @@ class AppWrapper extends PureComponent {
 				<Tester
 					specs={testSuitesArray}
 					store={testHookStore}
-					waitTime={1000}
-					testStartDelay={1000}
-					consoleLog="verbose" // {false}, {true}, 'verbose'
-					reporter="ChromiumJSONTestReporting"
+					waitTime={1000} // Time for finding specified hooked components
+					// testStartDelay={1000}
+					// consoleLog="verbose" // {false}, {true}, 'verbose'
+					// reporter="ChromiumJSONTestReporting"
 					// notifier={testApiParams}
 					reRender={false}
 				>
@@ -43,9 +39,8 @@ class AppWrapper extends PureComponent {
 				</Tester>
 			);
 		}
-		return (
-			<MyWantsApp />
-		);
+
+		return (<MyWantsApp />);
 	}
 }
 
