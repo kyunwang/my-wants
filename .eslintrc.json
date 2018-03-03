@@ -38,10 +38,24 @@
 			"always"
 		],
 		"no-tabs": 0,
+		"no-use-before-define": 0,
+		// "no-return-assign": [
+		// 	1,
+		// 	"except-parens"
+		// ],
+		// "arrow-parens": [
+		// 	1,
+		// 	"as-needed"
+		// ],
 		"react/jsx-indent": [
 			2,
 			"tab"
 		],
-		"react/jsx-filename-extension": 0
+		"react/prefer-stateless-function": 0,
+		"react/jsx-filename-extension": 0,
+		"react/jsx-indent-props": [
+			2,
+			"tab"
+		]
 	}
 }

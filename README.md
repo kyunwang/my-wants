@@ -18,6 +18,10 @@ In this document I record my process and decisions of the making of this applica
 - [The look](#the-look)
 	- [Sketches](#sketches)
 	- [Screens](#screens)
+- [Start](#start)
+	- [Setting up Cavy](#setting-up-cavy)
+	- [Setting up a Router](#setting-up-a-router)
+	- [](#)
 
 
 ## Minimal Functionality
@@ -158,6 +162,67 @@ Here a little animation, which I think I will implement. (well try to implement)
 
 Tried out Diya plugin of Sketch. It is pretty nice, but sadly the exporting to a interactive prototype didn't seem to work for some reason.
 
+## Start
+Gonna start the coding and juggle between code and design from here on out.
+
+
+### Setting up Cavy
+First of Using Cavy is going to change the way you are going to write the component a bit. Cavy needs to wrap the component in order to work so it is necessary to do so.
+
+*It is not going to make too much of a difference but it is important to know.*
+
+As the repo of [Cavy](#cavy) says, It abuses the `ref` to run tests.
+
+> Cavy provides 3 tools to let you run integration tests:
+> 1. A store of 'test hooks'; key-value pairs between a string identifier and a component somewhere in your app component tree.
+> 2. A set of helper functions to write spec files.
+> 3. A <Tester> component you wrap around your entire app to make the test hook store available, and autorun your test cases on boot.
+
+
+#### First setup
+Setup is based on [this pull request](#cavy-prevent-leak-repo)
+
+1. Install it `npm i -D cavy`
+2. We are going to create a wrapper for cavy in order to prevent cavy from leaking to the production build.
+```
+// helpers/cavy.js
+	import { hook, wrap } from 'cavy';
+
+	import GLOBAL from './globals';
+
+	// We wrap the stateless components with this to allow the usage of refs
+	function testWrapHook(component) {
+		if (GLOBAL.TEST_ENABLED) {
+			return hook(wrap(component));
+		}
+		return component;
+	}
+
+	// We wrap statefull component with this
+	function testHook(component) {
+		if (GLOBAL.TEST_ENABLED) {
+			return hook(component);
+		}
+		return component;
+	}
+
+	export {
+		testWrapHook,
+		testHook,
+	};
+```
+You hook up any component you want to test. Adding a `ref` and using the prop `generateTestProp`
+3. Set up the test wrapper. Typically on the **top-level js file** e.g. `index.{ios,android}.js`
+We will do it with the wrapper like so:
+```
+
+
+```
+
+4. Create a test/spec file
+
+
+### Setting up a Router
 
 
 [trello]: https://trello.com/b/4JgtyCTK
@@ -178,7 +243,7 @@ Tried out Diya plugin of Sketch. It is pretty nice, but sadly the exporting to a
 
 [rn-london]: https://pusher.com/sessions/meetup/react-native-london/cavy-a-new-end-to-end-testing-framework-for-react-native?utm_source=reactnl&utm_medium=email
 [cavy-prevent-leak]: https://github.com/pixielabs/cavy/pull/20
-[cavy-prevent-leak]: https://github.com/TGPSKI/cavy/tree/add-jenkins-reporting/sample-app/EmployeeDirectory
+[cavy-prevent-leak-repo]: https://github.com/TGPSKI/cavy/tree/add-jenkins-reporting/sample-app/EmployeeDirectory
 
 [sitemap1]: https://github.com/kyunwang/my-wants/blob/master/doc-img/sitemap-draft.jpg
 
