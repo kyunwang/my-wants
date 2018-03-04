@@ -244,11 +244,13 @@ We start with adding the package of course.
 
 For a more in-depth overview check the [docs](#router2)
 
+1. Install the package
 ```
 // Install the package
 npm i -S react-navigation
 ```
 
+2. Importing the package
 We will be using `StackNavigator` from `react-navigation` to start with. This may change depending on how it goes.
 ```
 // you need to import React for it to work
@@ -257,7 +259,7 @@ import React from 'react';
 // Import the StackNavigator first ofcourse
 import { StackNavigator } from 'react-navigation';
 ```
-
+3. Import the scenes
 The we need to import the *Scenes* you want to navigate to
 ```
 // Your scenes here
@@ -265,6 +267,7 @@ import Home from './routes/Home;
 ... more routes/scenes
 ```
 
+4. Defining our navigator
 Then we define the navigator.
 
 We call the route `Home: { ... }` right here but it can be anything you want.
@@ -279,6 +282,7 @@ const RootStack = StackNavigator({
 });
 ```
 
+5. Exporting the navigator
 Now we export our navigation. This is my preferred way to do it, do it however you like to.
 ```
 function RootNavigation() {
@@ -288,6 +292,7 @@ function RootNavigation() {
 export default RootNavigation;
 ```
 
+6. Hooking up the navigator to the app
 Last thing to do is to is to add this to your most top-level component, usually `App.js` e.g. your entry file.
 ```
 // ... imports and such

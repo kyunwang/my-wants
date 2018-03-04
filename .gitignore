@@ -16,6 +16,7 @@ yarn-error.log*
 
 # Others
 LOCAL_ONLY
+assets/fonts
 
 .vscode
 .expo

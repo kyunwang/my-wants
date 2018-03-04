@@ -1,7 +1,9 @@
 import React, { PureComponent } from 'react';
-
+import { Font } from 'expo';
 import { Tester, TestHookStore } from 'cavy';
 
+
+import { Text } from 'react-native';
 import RootNavigation from './app/navigation/RootNavigation';
 
 import GLOBAL from './app/helpers/globals';
@@ -22,25 +24,47 @@ if (GLOBAL.TEST_ENABLED) {
 }
 
 class AppWrapper extends PureComponent {
-	render() {
-		if (GLOBAL.TEST_ENABLED) {
-			return (
-				<Tester
-					specs={testSuitesArray}
-					store={testHookStore}
-					waitTime={1000} // Time for finding specified hooked components
-					// testStartDelay={1000}
-					// consoleLog="verbose" // {false}, {true}, 'verbose'
-					// reporter="ChromiumJSONTestReporting"
-					// notifier={testApiParams}
-					reRender={false}
-				>
-					<RootNavigation />
-				</Tester>
-			);
-		}
+	state = {
+		fontLoaded: false,
+	}
 
-		return (<RootNavigation />);
+
+	componentWillMount() {
+		this.loadAssets();
+	}
+
+	async loadAssets() {
+		await Font.loadAsync({
+			'font-regular': require('./assets/fonts/Montserrat-Regular.otf'),
+			'font-bold': require('./assets/fonts/Montserrat-Bold.otf'),
+		});
+
+		this.setState({ fontLoaded: true });
+	}
+
+
+	render() {
+		if (this.state.fontLoaded) {
+			if (GLOBAL.TEST_ENABLED) {
+				return (
+					<Tester
+						specs={testSuitesArray}
+						store={testHookStore}
+						waitTime={1000} // Time for finding specified hooked components
+						// testStartDelay={1000}
+						// consoleLog="verbose" // {false}, {true}, 'verbose'
+						// reporter="ChromiumJSONTestReporting"
+						// notifier={testApiParams}
+						reRender={false}
+					>
+						<RootNavigation />
+					</Tester>
+				);
+			}
+
+			return (<RootNavigation />);
+		}
+		return (<Text>Loading</Text>);
 	}
 }
 

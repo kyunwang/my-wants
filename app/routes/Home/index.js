@@ -4,28 +4,31 @@ import PropTypes from 'prop-types';
 
 import styled from 'styled-components';
 
-import Page from '../../components/Layout/Page';
-
 import GLOBAL from '../../helpers/globals';
 import { testHook } from '../../helpers/cavy';
 
-const OverviewWrapper = styled.View`
+import Page from '../../components/Layout/Page';
+
+import OverviewScreen from './OverviewScreen';
+import ArchiveScreen from './ArchiveScreen';
+
+const PageWrapper = styled.View`
 	background-color: red;
-	height: 100px;
-	width: 100px;
+	height: 300px;
+	width: 90%;
+
+	flex-direction: row;
 `;
 
-const OverviewText = styled.Text`
-	color: blue;
-`;
 
 class Overview extends Component {
 	render() {
 		return (
 			<Page>
-				<OverviewWrapper>
-					<OverviewText>Overview</OverviewText>
-				</OverviewWrapper>
+				<PageWrapper>
+					<OverviewScreen />
+					<ArchiveScreen />
+				</PageWrapper>
 				<Button
 					ref={GLOBAL.TEST_ENABLED ? this.props.generateTestHook('Overview.ToOverview') : null}
 					title="Overview"

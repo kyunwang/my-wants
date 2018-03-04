@@ -3,10 +3,12 @@ import PropTypes from 'prop-types';
 
 import styled from 'styled-components';
 
-import { SafeAreaView } from 'react-native';
+import Color from '../../constants/Colors';
+
+import Header from './Header';
 
 const PageWrapper = styled.SafeAreaView`
-	background-color: yellow;
+	background-color: ${Color.backgroundColor};
 	height: 100%;
 	width: 100%;
 	padding-top: 5%;
@@ -27,6 +29,7 @@ const propTypes = {
 function Page(props) {
 	return (
 		<PageWrapper>
+			<Header />
 			<PageText>Page</PageText>
 			{props.children}
 		</PageWrapper>

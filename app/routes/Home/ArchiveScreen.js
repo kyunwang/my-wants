@@ -3,12 +3,10 @@ import PropTypes from 'prop-types';
 
 import styled from 'styled-components';
 
-import Page from '../../components/Layout/Page';
-
 const ArchiveWrapper = styled.View`
-	background-color: red;
+	background-color: pink;
 	height: 100px;
-	width: 100px;
+	width: 90%;
 `;
 
 const ArchiveText = styled.Text`
@@ -18,11 +16,9 @@ const ArchiveText = styled.Text`
 class Archive extends Component {
 	render() {
 		return (
-			<Page>
-				<ArchiveWrapper>
-					<ArchiveText>Archive</ArchiveText>
-				</ArchiveWrapper>
-			</Page>
+			<ArchiveWrapper>
+				<ArchiveText>Archive</ArchiveText>
+			</ArchiveWrapper>
 		);
 	}
 }
