@@ -1,6 +1,6 @@
 
 const GlobalTests = {
-	TEST_ENABLED: false,
+	TEST_ENABLED: true,
 };
 
 module.exports = { ...GlobalTests };

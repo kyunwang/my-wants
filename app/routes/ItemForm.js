@@ -5,26 +5,26 @@ import styled from 'styled-components';
 
 import Page from '../components/Layout/Page';
 
-const ArchiveWrapper = styled.View`
+const ItemFormWrapper = styled.View`
 	background-color: red;
 	height: 100px;
 	width: 100px;
 `;
 
-const ArchiveText = styled.Text`
+const ItemFormText = styled.Text`
 	color: blue;
 `;
 
-class Archive extends Component {
+class ItemForm extends Component {
 	render() {
 		return (
 			<Page>
-				<ArchiveWrapper>
-					<ArchiveText>Archive</ArchiveText>
-				</ArchiveWrapper>
+				<ItemFormWrapper>
+					<ItemFormText>ItemForm</ItemFormText>
+				</ItemFormWrapper>
 			</Page>
 		);
 	}
 }
 
-export default Archive;
+export default ItemForm;

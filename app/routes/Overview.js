@@ -1,9 +1,13 @@
 import React, { Component } from 'react';
+import { Button } from 'react-native';
 import PropTypes from 'prop-types';
 
 import styled from 'styled-components';
 
-// import { View, Text } from 'react-native';
+import Page from '../components/Layout/Page';
+
+import GLOBAL from '../helpers/globals';
+import { testWrapHook, testHook } from '../helpers/cavy';
 
 const OverviewWrapper = styled.View`
 	background-color: red;
@@ -18,11 +22,28 @@ const OverviewText = styled.Text`
 class Overview extends Component {
 	render() {
 		return (
-			<OverviewWrapper>
-				<OverviewText>Overview</OverviewText>
-			</OverviewWrapper>
+			<Page>
+				<OverviewWrapper>
+					<OverviewText>Overview</OverviewText>
+				</OverviewWrapper>
+				<Button
+					ref={GLOBAL.TEST_ENABLED ? this.props.generateTestHook('Overview.ToOverview') : null}
+					title="Overview"
+					onPress={() => this.props.navigation.navigate('Overview')}
+				/>
+				<Button
+					ref={GLOBAL.TEST_ENABLED ? this.props.generateTestHook('Overview.ToArchive') : null}
+					title="Archive"
+					onPress={() => this.props.navigation.navigate('Archive')}
+				/>
+				<Button
+					ref={GLOBAL.TEST_ENABLED ? this.props.generateTestHook('Overview.ToItemForm') : null}
+					title="ItemForm"
+					onPress={() => this.props.navigation.navigate('ItemForm')}
+				/>
+			</Page>
 		);
 	}
 }
 
-export default Overview;
+export default testHook(Overview);
