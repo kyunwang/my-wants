@@ -7,12 +7,12 @@ import HomeScreen from '../routes/Home';
 import ItemFormScreen from '../routes/ItemFormScreen';
 
 
-import HomeTabNav from '../navigation/HomeTabNav';
+// import HomeTabNav from '../navigation/HomeTabNav';
 
 const RootStack = StackNavigator({
 	Overview: {
-		screen: HomeTabNav,
-		// screen: HomeScreen,
+		// screen: HomeTabNav,
+		screen: HomeScreen,
 	},
 	ItemForm: {
 		screen: ItemFormScreen,

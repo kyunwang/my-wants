@@ -15,7 +15,7 @@ import ArchiveScreen from './ArchiveScreen';
 const PageWrapper = styled.View`
 	background-color: red;
 	height: 300px;
-	width: 90%;
+	width: 100%;
 
 	flex-direction: row;
 `;
@@ -27,7 +27,7 @@ class Overview extends Component {
 			<Page>
 				<PageWrapper>
 					<OverviewScreen />
-					<ArchiveScreen />
+					{/* <ArchiveScreen /> */}
 				</PageWrapper>
 				<Button
 					ref={GLOBAL.TEST_ENABLED ? this.props.generateTestHook('Overview.ToOverview') : null}

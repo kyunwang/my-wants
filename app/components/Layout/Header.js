@@ -1,7 +1,7 @@
-import React, { Component } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
 
-import { View, Text } from 'react-native';
+import { Text } from 'react-native';
 
 import styled from 'styled-components';
 
@@ -15,14 +15,14 @@ const HeaderWrapper = styled.View`
 	width: 100%;
 	height: 50;
 
-	padding-horizontal: ${Style.spaceHorizontal};
+	paddingHorizontal: ${Style.spaceHorizontal};
 `;
 
 const HeaderTitle = styled.Text`
 	font-family: font-regular
 `;
 
-function Header(props) {
+function Header() {
 	// Props is empty atm need the title
 	return (
 		<HeaderWrapper>

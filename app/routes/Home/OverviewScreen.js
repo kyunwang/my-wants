@@ -4,28 +4,38 @@ import PropTypes from 'prop-types';
 import styled from 'styled-components';
 
 import { testHook } from '../../helpers/cavy';
+import Style from '../../constants/Style';
 
+import CardActive from '../../components/Card/CardActive';
 
 const OverviewWrapper = styled.View`
-	background-color: red;
+	justify-content: center;
+	align-items: center;
 	height: 300px;
-	width: 90%;
+	width: 100%;
+	background-color: red;
 
-	flex-direction: row;
 `;
 
 const OverviewText = styled.Text`
 	color: blue;
 `;
 
-class Overview extends Component {
-	render() {
-		return (
-			<OverviewWrapper>
-				<OverviewText>Overview</OverviewText>
-			</OverviewWrapper>
-		);
-	}
+const CardListWrapper = styled.View`
+	width: 100%;
+	paddingHorizontal: ${Style.spaceHorizontal}
+`;
+
+function Overview() {
+	return (
+		<OverviewWrapper>
+			<OverviewText>Overview</OverviewText>
+
+			<CardListWrapper>
+				<CardActive />
+			</CardListWrapper>
+		</OverviewWrapper>
+	);
 }
 
 export default testHook(Overview);
