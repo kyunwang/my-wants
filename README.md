@@ -234,6 +234,76 @@ Seems pretty cool, Solid but a bit overwelming doc (Has a lot of issues active)
 
 Have decided to use **React navigation** for now. Was caught in between react navigationa dn react native navigation.
 
+**So we are using `react-navigation` for this project** 
+
+
+#### Adding the navigation
+We start with adding the package of course.
+
+*A quick overview of a basic router setup with `react-navigation`.*
+
+For a more in-depth overview check the [docs](#router2)
+
+```
+// Install the package
+npm i -S react-navigation
+```
+
+We will be using `StackNavigator` from `react-navigation` to start with. This may change depending on how it goes.
+```
+// you need to import React for it to work
+import React from 'react';
+
+// Import the StackNavigator first ofcourse
+import { StackNavigator } from 'react-navigation';
+```
+
+The we need to import the *Scenes* you want to navigate to
+```
+// Your scenes here
+import Home from './routes/Home;
+... more routes/scenes
+```
+
+Then we define the navigator.
+
+We call the route `Home: { ... }` right here but it can be anything you want.
+```
+const RootStack = StackNavigator({
+	Home: {
+		screen: Home
+	}
+}, {
+	// ...options can be added here like
+	initialRouteName: 'Home'
+});
+```
+
+Now we export our navigation. This is my preferred way to do it, do it however you like to.
+```
+function RootNavigation() {
+	return <RootStack />
+}
+
+export default RootNavigation;
+```
+
+Last thing to do is to is to add this to your most top-level component, usually `App.js` e.g. your entry file.
+```
+// ... imports and such
+class App extends Component {
+	render() {
+		return <RootNavigation />
+	}
+}
+```
+
+And voila, the router is connected!
+
+*P.S. you can do this in the `App.js` file too if you like that better*
+
+*In this case I had a `<Tester>` component which wrapped the `<RootNavigation>` that is why I imported it in `App.js`
+
 
 
 
