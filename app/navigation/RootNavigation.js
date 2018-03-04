@@ -3,9 +3,9 @@ import React, { Component } from 'react';
 
 import { StackNavigator } from 'react-navigation';
 
-import Overview from './routes/Overview';
-import Archive from './routes/Archive';
-import ItemForm from './routes/ItemForm';
+import Overview from '../routes/Overview';
+import Archive from '../routes/Archive';
+import ItemForm from '../routes/ItemForm';
 
 const RootStack = StackNavigator({
 	Overview: {

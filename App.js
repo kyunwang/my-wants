@@ -2,7 +2,7 @@ import React, { PureComponent } from 'react';
 
 import { Tester, TestHookStore } from 'cavy';
 
-import MyWantsApp from './app/MyWantsApp';
+import RootNavigation from './app/navigation/RootNavigation';
 
 import GLOBAL from './app/helpers/globals';
 
@@ -35,12 +35,12 @@ class AppWrapper extends PureComponent {
 					// notifier={testApiParams}
 					reRender={false}
 				>
-					<MyWantsApp />
+					<RootNavigation />
 				</Tester>
 			);
 		}
 
-		return (<MyWantsApp />);
+		return (<RootNavigation />);
 	}
 }
 
