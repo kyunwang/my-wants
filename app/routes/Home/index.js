@@ -4,10 +4,10 @@ import PropTypes from 'prop-types';
 
 import styled from 'styled-components';
 
-import Page from '../components/Layout/Page';
+import Page from '../../components/Layout/Page';
 
-import GLOBAL from '../helpers/globals';
-import { testWrapHook, testHook } from '../helpers/cavy';
+import GLOBAL from '../../helpers/globals';
+import { testHook } from '../../helpers/cavy';
 
 const OverviewWrapper = styled.View`
 	background-color: red;

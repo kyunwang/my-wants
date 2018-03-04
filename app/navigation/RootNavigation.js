@@ -1,21 +1,21 @@
-import React, { Component } from 'react';
+import React from 'react';
 // import PropTypes from 'prop-types';
 
 import { StackNavigator } from 'react-navigation';
 
-import Overview from '../routes/Overview';
-import Archive from '../routes/Archive';
-import ItemForm from '../routes/ItemForm';
+import HomeScreen from '../routes/Home';
+import ItemFormScreen from '../routes/ItemFormScreen';
+
+
+import HomeTabNav from '../navigation/HomeTabNav';
 
 const RootStack = StackNavigator({
 	Overview: {
-		screen: Overview,
-	},
-	Archive: {
-		screen: Archive,
+		screen: HomeTabNav,
+		// screen: HomeScreen,
 	},
 	ItemForm: {
-		screen: ItemForm,
+		screen: ItemFormScreen,
 	},
 }, {
 	initialRouteName: 'Overview',
@@ -23,14 +23,15 @@ const RootStack = StackNavigator({
 	headerMode: 'none',
 });
 
+// Keeping this in case there is a problem with using a SFC
 // class MyWantsApp extends Component {
 // 	render() {
 // 		return <RootStack />;
 // 	}
 // }
 
-function MyWantsApp() {
+function RootNavigation() {
 	return <RootStack />;
 }
 
-export default MyWantsApp;
+export default RootNavigation;
