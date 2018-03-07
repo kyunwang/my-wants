@@ -3,11 +3,11 @@ A application to keep track of what you want to buy. (Name is debatable)
 
 In this document I record my process and decisions of the making of this application.
 
-**Progress/Trello: [Here][#trello]**
+**Progress/Trello: [Here][trello]**
 
 *Some more attachements will be placed in trello*
 
-[Here a link][#anim1proto] to a small prototype for a animation
+[Here a link][anim1proto] to a small prototype for a animation
 
 ## Table of content
 
@@ -103,20 +103,20 @@ Never used the graphql option but they seem interesting.
 
 ### Others
 **Maybe look into:**
-- [Pusher][#pusher]
-- [FastLane][#fastlane]
-- [Visual Studio App Center][#app-center]
+- [Pusher][pusher]
+- [FastLane][fastlane]
+- [Visual Studio App Center][app-center]
 - [](#)
 - [](#)
 
 **Analytics options:**
-- [google-analytics][#google-analytics]
-- [matomo][#matomo] possible to use with RN?
-- [VS - App Center][#app-center-analytics]
+- [google-analytics][google-analytics]
+- [matomo][matomo] possible to use with RN?
+- [VS - App Center][app-center-analytics]
 
 **Testing:**
-- [Cavy][#cavy] Looks neat (E2E testing]
-- [Jest][#jest)]
+- [Cavy][cavy] Looks neat (E2E testing]
+- [Jest][jest)]
 - [Enzyme]
 - [Mocha/Chai]
 
@@ -125,10 +125,10 @@ First question: *What do I want to test? Do I even need tests here?*
 
 
 
-Cavy talk at [React-Native-London][#rn-london]
+Cavy talk at [React-Native-London][rn-london]
 - Cavy does **leak** to the production bundle - need to write a own config to bypass that
 
-This is probably the wayt to prevent the leaking: [Here][#cavy-prevent-leak] and the [Example][#cavy-prevent-leak-repo]
+This is probably the wayt to prevent the leaking: [Here][cavy-prevent-leak] and the [Example][cavy-prevent-leak-repo]
 
 
 ## The look
@@ -157,7 +157,7 @@ Some things are not realy consistent yet like the positioning of the buttons.
 <img src="https://github.com/kyunwang/my-wants/blob/master/doc-img/animation1.gif" alt="a small prototype animation" height="">
 
 Here a little animation, which I think I will implement. (well try to implement) 😉
-[Here the link][#anim1proto] to the animation prototype
+[Here the link][anim1proto] to the animation prototype
 
 Tried out Diya plugin of Sketch. It is pretty nice, but sadly the exporting to a interactive prototype didn't seem to work for some reason.
 
