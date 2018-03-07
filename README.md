@@ -7,6 +7,8 @@ In this document I record my process and decisions of the making of this applica
 
 *Some more attachements will be placed in trello*
 
+[Here a link](#anim1proto) to a small prototype for a animation
+
 ## Table of content
 
 - [Minimal functionality](#minimal-functionality)
@@ -155,6 +157,7 @@ Some things are not realy consistent yet like the positioning of the buttons.
 <img src="https://github.com/kyunwang/my-wants/blob/master/doc-img/animation1.gif" alt="a small prototype animation" height="">
 
 Here a little animation, which I think I will implement. (well try to implement) 😉
+[Here the link](#anim1proto) to the animation prototype
 
 Tried out Diya plugin of Sketch. It is pretty nice, but sadly the exporting to a interactive prototype didn't seem to work for some reason.
 
@@ -187,3 +190,5 @@ Tried out Diya plugin of Sketch. It is pretty nice, but sadly the exporting to a
 
 [anim1]: https://github.com/kyunwang/my-wants/blob/master/doc-img/animation1.gif
 [screens1]: https://github.com/kyunwang/my-wants/blob/master/doc-img/screens1.png
+
+[anim1proto]: http://project.kyunwang.nl/my-wants/anim/
