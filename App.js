@@ -2,9 +2,18 @@ import React, { PureComponent } from 'react';
 import { Font } from 'expo';
 import { Tester, TestHookStore } from 'cavy';
 
+import { Provider } from 'react-redux';
+import { PersistGate } from 'redux-persist/integration/react';
+
 
 import { Text } from 'react-native';
+
+import { store, persistor } from './app/store';
+// import persistor from './app/store/reducers';
+
+
 import RootNavigation from './app/navigation/RootNavigation';
+
 
 import GLOBAL from './app/helpers/globals';
 
@@ -47,22 +56,34 @@ class AppWrapper extends PureComponent {
 		if (this.state.fontLoaded) {
 			if (GLOBAL.TEST_ENABLED) {
 				return (
-					<Tester
-						specs={testSuitesArray}
-						store={testHookStore}
-						waitTime={1000} // Time for finding specified hooked components
-						// testStartDelay={1000}
-						// consoleLog="verbose" // {false}, {true}, 'verbose'
-						// reporter="ChromiumJSONTestReporting"
-						// notifier={testApiParams}
-						reRender={false}
-					>
-						<RootNavigation />
-					</Tester>
+					<Provider store={store}>
+						<PersistGate loading={null} persistor={persistor}>
+							<Tester
+								specs={testSuitesArray}
+								store={testHookStore}
+								waitTime={1000} // Time for finding specified hooked components
+								// testStartDelay={1000}
+								// consoleLog="verbose" // {false}, {true}, 'verbose'
+								// reporter="ChromiumJSONTestReporting"
+								// notifier={testApiParams}
+								reRender={false}
+							>
+								<RootNavigation />
+							</Tester>
+						</PersistGate>
+					</Provider>
 				);
 			}
 
-			return (<RootNavigation />);
+			return (
+				<Provider store={store}>
+					<PersistGate
+						loading={null} // Can be a loading component
+						persistor={persistor}
+					>
+						<RootNavigation />
+					</PersistGate>
+				</Provider>);
 		}
 		return (<Text>Loading</Text>);
 	}
