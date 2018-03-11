@@ -1,6 +1,8 @@
 # my-wants
 A application to keep track of what you want to buy. (Name is debatable)
 
+The back-end for the application - [my-wants-server][server]
+
 In this document I record my process and decisions of the making of this application.
 
 **Progress/Trello: [Here](#trello)**
@@ -102,6 +104,10 @@ Firebase seems like a sloid choice as the integration is pretty smooth, but scal
 Never used the graphql option but they seem interesting.
 
 **For starters, I will use `AsyncStorage` and build upon that later on with a cloudbased or maybe a custom backend**
+
+**Creating a custom back-end anyway** Just because. Right [here](server)
+
+Need to research how to have offline support.
 
 ### Others
 **Maybe look into:**
@@ -310,7 +316,7 @@ And voila, the router is connected!
 *In this case I had a `<Tester>` component which wrapped the `<RootNavigation>` that is why I imported it in `App.js`
 
 
-
+[server]: https://github.com/kyunwang/my-wants-server
 
 [trello]: https://trello.com/b/4JgtyCTK
 
