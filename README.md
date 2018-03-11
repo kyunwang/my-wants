@@ -5,9 +5,11 @@ The back-end for the application - [my-wants-server][server]
 
 In this document I record my process and decisions of the making of this application.
 
-**Progress/Trello: [Here](#trello)**
+**Progress/Trello: [Here][trello]**
 
 *Some more attachements will be placed in trello*
+
+[Here a link][anim1proto] to a small prototype for a animation
 
 ## Table of content
 
@@ -111,20 +113,20 @@ Need to research how to have offline support.
 
 ### Others
 **Maybe look into:**
-- [Pusher](#pusher)
-- [FastLane](#fastlane)
-- [Visual Studio App Center](#app-center)
+- [Pusher][pusher]
+- [FastLane][fastlane]
+- [Visual Studio App Center][app-center]
 - [](#)
 - [](#)
 
 **Analytics options:**
-- [google-analytics](#google-analytics)
-- [matomo](#matomo) possible to use with RN?
-- [VS - App Center](#app-center-analytics)
+- [google-analytics][google-analytics]
+- [matomo][matomo] possible to use with RN?
+- [VS - App Center][app-center-analytics]
 
 **Testing:**
-- [Cavy](#cavy) Looks neat (E2E testing)
-- [Jest](#jest) 
+- [Cavy][cavy] Looks neat (E2E testing]
+- [Jest][jest)]
 - [Enzyme]
 - [Mocha/Chai]
 
@@ -133,10 +135,10 @@ First question: *What do I want to test? Do I even need tests here?*
 
 
 
-Cavy talk at [React-Native-London](#rn-london)
+Cavy talk at [React-Native-London][rn-london]
 - Cavy does **leak** to the production bundle - need to write a own config to bypass that
 
-This is probably the wayt to prevent the leaking: [Here](#cavy-prevent-leak) and the [Example](#cavy-prevent-leak-repo)
+This is probably the wayt to prevent the leaking: [Here][cavy-prevent-leak] and the [Example][cavy-prevent-leak-repo]
 
 
 ## The look
@@ -165,6 +167,7 @@ Some things are not realy consistent yet like the positioning of the buttons.
 <img src="https://github.com/kyunwang/my-wants/blob/master/doc-img/animation1.gif" alt="a small prototype animation" height="">
 
 Here a little animation, which I think I will implement. (well try to implement) 😉
+[Here the link][anim1proto] to the animation prototype
 
 Tried out Diya plugin of Sketch. It is pretty nice, but sadly the exporting to a interactive prototype didn't seem to work for some reason.
 
@@ -177,7 +180,7 @@ First of Using Cavy is going to change the way you are going to write the compon
 
 *It is not going to make too much of a difference but it is important to know.*
 
-As the repo of [Cavy](#cavy) says, It abuses the `ref` to run tests.
+As the repo of [Cavy](cavy) says, It abuses the `ref` to run tests.
 
 > Cavy provides 3 tools to let you run integration tests:
 > 1. A store of 'test hooks'; key-value pairs between a string identifier and a component somewhere in your app component tree.
@@ -186,7 +189,7 @@ As the repo of [Cavy](#cavy) says, It abuses the `ref` to run tests.
 
 
 #### First setup
-Setup is based on [this pull request](#cavy-prevent-leak-repo)
+Setup is based on [this pull request](cavy-prevent-leak-repo)
 
 1. Install it `npm i -D cavy`
 2. We are going to create a wrapper for cavy in order to prevent cavy from leaking to the production build.
@@ -231,11 +234,11 @@ We will do it with the wrapper like so:
 ### Setting up a Router
 
 Thinking about using:
-- [React native router flux](#router1)
+- [React native router flux](router1)
 Have used this before. Pretty easy syntax. Had some problems when needing som customisation
-- [React navigation](#router2)
+- [React navigation](router2)
 The syntax seems a bit verbose. (Pretty much the 'official' navigator)
-- [React native navigation](#router3) By Wix
+- [React native navigation](router3) By Wix
 Seems pretty cool, Solid but a bit overwelming doc (Has a lot of issues active)
 
 Have decided to use **React navigation** for now. Was caught in between react navigationa dn react native navigation.
@@ -248,7 +251,7 @@ We start with adding the package of course.
 
 *A quick overview of a basic router setup with `react-navigation`.*
 
-For a more in-depth overview check the [docs](#router2)
+For a more in-depth overview check the [docs](router2)
 
 1. Install the package
 ```
@@ -409,3 +412,4 @@ function myItems(state = [], action) {
 [router1]: https://github.com/aksonov/react-native-router-flux
 [router2]: https://reactnavigation.org/
 [router3]: https://wix.github.io/react-native-navigation/
+[anim1proto]: http://project.kyunwang.nl/my-wants/anim/
