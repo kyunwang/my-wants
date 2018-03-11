@@ -27,9 +27,13 @@ const propTypes = {
 };
 
 function Page(props) {
+	const {
+		navigation,
+	} = props;
+
 	return (
 		<PageWrapper>
-			<Header />
+			<Header navigation={navigation} />
 			<PageText>Page</PageText>
 			{props.children}
 		</PageWrapper>

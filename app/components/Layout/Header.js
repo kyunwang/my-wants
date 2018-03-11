@@ -9,6 +9,8 @@ import Style from '../../constants/Style';
 import Color from '../../constants/Color';
 import Icon from '../../constants/Icon';
 
+import ButtonWrapper from '../Button/ButtonWrapper';
+
 const HeaderWrapper = styled.View`
 	flex-direction: row;
 	align-items: center;
@@ -30,22 +32,42 @@ const HeaderButton = styled.Image`
 	width: 15;
 `;
 
-function Header() {
-	// Props is empty atm need the title
+function headerNavigate(navigation, route) {
+	return function () {
+		console.log(route);
+		navigation.navigate(route);
+	};
+}
+
+const propTypes = {
+	navigation: PropTypes.object.isRequired,
+};
+
+function Header(props) {
+	const {
+		navigation,
+	} = props;
+
 	return (
 		<HeaderWrapper>
-			<HeaderButton
-				source={Icon.menu}
-				fadeDuration={0}
-			/>
+			<ButtonWrapper onPress={headerNavigate(navigation, 'Overview')}>
+				<HeaderButton
+					source={Icon.menu}
+					fadeDuration={0}
+				/>
+			</ButtonWrapper>
 
 			<HeaderTitle>{'header'.toUpperCase()}</HeaderTitle>
-			<HeaderButton
-				source={Icon.add}
-				fadeDuration={0}
-			/>
+			<ButtonWrapper onPress={headerNavigate(navigation, 'ItemForm')}>
+				<HeaderButton
+					source={Icon.add}
+					fadeDuration={0}
+				/>
+			</ButtonWrapper>
 		</HeaderWrapper>
 	);
 }
+
+Header.propTypes = propTypes;
 
 export default Header;

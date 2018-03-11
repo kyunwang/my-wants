@@ -23,8 +23,12 @@ const PageWrapper = styled.View`
 
 class Overview extends Component {
 	render() {
+		const {
+			navigation,
+		} = this.props;
+
 		return (
-			<Page>
+			<Page navigation={navigation}>
 				<PageWrapper>
 					<OverviewScreen />
 					{/* <ArchiveScreen /> */}
