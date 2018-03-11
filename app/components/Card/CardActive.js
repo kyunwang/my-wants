@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 
 import styled from 'styled-components';
 
-import Color from '../../constants/Colors';
+import Color from '../../constants/Color';
 
 const CardActiveWrapper = styled.View`
 	min-height: 100;
