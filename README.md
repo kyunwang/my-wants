@@ -23,7 +23,7 @@ In this document I record my process and decisions of the making of this applica
 - [Start](#start)
 	- [Setting up Cavy](#setting-up-cavy)
 	- [Setting up a Router](#setting-up-a-router)
-	- [](#)
+	- [Redux](#redux)
 
 
 ## Minimal Functionality
@@ -314,6 +314,66 @@ And voila, the router is connected!
 *P.S. you can do this in the `App.js` file too if you like that better*
 
 *In this case I had a `<Tester>` component which wrapped the `<RootNavigation>` that is why I imported it in `App.js`
+
+
+### Redux
+Decided to use `Redux` in for local usage then build up for later using a server. Need to figure out offline syncing when there is no network for later.
+
+We need a store, reducers and actions.
+
+#### Getting started
+
+1. Install the packages using `npm install --save redux react-redux`
+
+2. Wrap the App with `Provider` provided by `react-redux`
+```
+import { Provider } from 'react-redux;
+import store from './store';
+
+...
+render() {
+	return (
+		<Provider store={store}>
+			<App />
+		</Provider>
+	);
+}
+...
+
+```
+
+I like to keep the store in a seperate file to keep the App.js file cleaner.
+
+3. Create a action
+```
+function newItem(data) {
+	return {
+		type: 'NEW_ITEM', // A standard to define it like this
+		data: data // We pass the data as data to the reducer
+	}
+}
+```
+*Here we define the `type` of the action and pass data through to the reducer.*
+
+4. Create a reducer
+```
+function myItems(state = [], action) {
+	switch (action.type) {
+		case 'NEW_ITEM':
+			return {....}
+		default:
+			return state;
+	}
+}
+```
+*Here we manipulate the data. NOTE that redux follow the principle of immutability.*
+
+`state = []` is were we set the default to a empty array.
+
+`action` is what we returned in the Action
+
+<!-- `myItems` is our `store` for the items. We can also make another one  -->
+
 
 
 [server]: https://github.com/kyunwang/my-wants-server
