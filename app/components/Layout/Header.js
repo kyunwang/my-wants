@@ -1,8 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import { Text } from 'react-native';
-
 import styled from 'styled-components';
 
 import Style from '../../constants/Style';
@@ -32,11 +30,26 @@ const HeaderButton = styled.Image`
 	width: 15;
 `;
 
-function headerNavigate(navigation, route) {
-	return function () {
-		console.log(route);
-		navigation.navigate(route);
+// Return a closure to render the function just once instead of each render (currying)
+function headerNavigate(navigation, route, title) {
+	return function navigate() {
+		console.log(navigation.state, title);
+
+		navigation.navigate(route, { title });
+		// navigation.setParams({ title });
 	};
+}
+
+function getHeader(navigation) {
+	const { params } = navigation.state;
+
+	// Set default to 'overview'
+	if (typeof params === 'undefined' || typeof params.title === 'undefined') {
+		return 'overview'.toUpperCase();
+	}
+
+	// Return the title
+	return params.title.toUpperCase();
 }
 
 const propTypes = {
@@ -44,21 +57,23 @@ const propTypes = {
 };
 
 function Header(props) {
+	// console.log('Header', props);
 	const {
 		navigation,
 	} = props;
 
 	return (
 		<HeaderWrapper>
-			<ButtonWrapper onPress={headerNavigate(navigation, 'Overview')}>
+			<ButtonWrapper onPress={headerNavigate(navigation, 'Overview', 'overview')}>
 				<HeaderButton
 					source={Icon.menu}
 					fadeDuration={0}
 				/>
 			</ButtonWrapper>
 
-			<HeaderTitle>{'header'.toUpperCase()}</HeaderTitle>
-			<ButtonWrapper onPress={headerNavigate(navigation, 'ItemForm')}>
+			<HeaderTitle>{getHeader(navigation)}</HeaderTitle>
+
+			<ButtonWrapper onPress={headerNavigate(navigation, 'ItemForm', 'new item')}>
 				<HeaderButton
 					source={Icon.add}
 					fadeDuration={0}

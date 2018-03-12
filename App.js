@@ -11,9 +11,7 @@ import { Text } from 'react-native';
 import { store, persistor } from './app/store';
 // import persistor from './app/store/reducers';
 
-
 import RootNavigation from './app/navigation/RootNavigation';
-
 
 import GLOBAL from './app/helpers/globals';
 
@@ -36,7 +34,6 @@ class AppWrapper extends PureComponent {
 	state = {
 		fontLoaded: false,
 	}
-
 
 	componentWillMount() {
 		this.loadAssets();

@@ -1,5 +1,4 @@
 import React from 'react';
-// import PropTypes from 'prop-types';
 
 import { StackNavigator } from 'react-navigation';
 
@@ -12,15 +11,23 @@ import ItemFormScreen from '../routes/ItemFormScreen';
 const RootStack = StackNavigator({
 	Overview: {
 		// screen: HomeTabNav,
+		headerTitle: 'overview',
 		screen: HomeScreen,
 	},
 	ItemForm: {
+		title: 'new item',
 		screen: ItemFormScreen,
 	},
 }, {
 	initialRouteName: 'Overview',
-	navigationOptions: {},
-	headerMode: 'none',
+	// navigationOptions: ({ navigation }) => {
+	// 	const { params } = navigation.state;
+	// 	return {
+	// 		headerTitle: params ? params.title : '',
+	// 	};
+	// },
+
+	headerMode: 'none', // Turn off the default header
 });
 
 // Keeping this in case there is a problem with using a SFC

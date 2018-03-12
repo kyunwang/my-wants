@@ -20,9 +20,21 @@ const PageWrapper = styled.View`
 	flex-direction: row;
 `;
 
+const propTypes = {
+	generateTestHook: PropTypes.func,
+	navigation: PropTypes.object.isRequired,
+};
+
+const defaultProps = {
+	generateTestHook: () => {},
+};
 
 class Overview extends Component {
+	static propTypes = propTypes;
+	static defaultProps = defaultProps;
+
 	render() {
+		// console.log('Overview', this.props);
 		const {
 			navigation,
 		} = this.props;
