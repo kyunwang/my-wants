@@ -6,7 +6,7 @@ import styled from 'styled-components';
 import { testHook } from '../../helpers/cavy';
 import Style from '../../constants/Style';
 
-import CardActive from '../../components/Card/CardActive';
+import CardActive from '../../components/UI/Card/CardActive';
 
 const OverviewWrapper = styled.View`
 	justify-content: center;

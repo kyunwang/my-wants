@@ -24,12 +24,19 @@ const propTypes = {
 		PropTypes.object,
 		PropTypes.array,
 	]).isRequired,
+	navigation: PropTypes.object.isRequired,
 };
 
 function Page(props) {
+	// console.log('Page props:', props);
+
+	const {
+		navigation,
+	} = props;
+
 	return (
 		<PageWrapper>
-			<Header />
+			<Header navigation={navigation} />
 			<PageText>Page</PageText>
 			{props.children}
 		</PageWrapper>
