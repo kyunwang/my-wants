@@ -3,7 +3,7 @@ import React from 'react';
 import { StackNavigator } from 'react-navigation';
 
 import HomeScreen from '../screens/Home';
-import ItemForm from '../screens/Form/New';
+import ItemForm from '../screens/NewForm';
 
 
 // import HomeTabNav from '../navigation/HomeTabNav';
