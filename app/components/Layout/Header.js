@@ -17,7 +17,7 @@ const HeaderWrapper = styled.View`
 	width: 100%;
 	height: 50;
 `;
-	// paddingHorizontal: ${Style.spaceHorizontal};
+	// paddingHorizontal: ${Style.defSpace};
 
 const HeaderTitle = styled.Text`
 	font-family: font-bold;
@@ -27,7 +27,7 @@ const HeaderTitle = styled.Text`
 const HeaderButton = styled.Image`
 	height: 15px;
 	width: 15px;
-	margin: 20px;
+	margin: ${Style.defSpace}px;
 `;
 
 const HeaderText = styled.Text`

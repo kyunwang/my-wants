@@ -23,7 +23,7 @@ const OverviewText = styled.Text`
 
 const CardListWrapper = styled.View`
 	width: 100%;
-	paddingHorizontal: ${Style.spaceHorizontal}
+	paddingHorizontal: ${Style.defSpace}
 `;
 
 function Overview() {

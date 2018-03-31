@@ -1,4 +1,4 @@
 export default {
-	spaceHorizontal: 20,
+	defSpace: 20,
 };
 
