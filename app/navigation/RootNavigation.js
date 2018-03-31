@@ -3,7 +3,7 @@ import React from 'react';
 import { StackNavigator } from 'react-navigation';
 
 import HomeScreen from '../screens/Home';
-import ItemFormScreen from '../screens/ItemFormScreen';
+import ItemForm from '../screens/Form/New';
 
 
 // import HomeTabNav from '../navigation/HomeTabNav';
@@ -16,7 +16,7 @@ const RootStack = StackNavigator({
 	},
 	ItemForm: {
 		title: 'new item',
-		screen: ItemFormScreen,
+		screen: ItemForm,
 	},
 }, {
 	initialRouteName: 'Overview',

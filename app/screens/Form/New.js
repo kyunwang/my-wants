@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 
 import styled from 'styled-components';
 
-import Page from '../components/Layout/Page';
+import Page from '../../components/Layout/Page';
 
 const ItemFormWrapper = styled.View`
 	background-color: red;

@@ -9,8 +9,8 @@ import { testHook } from '../../helpers/cavy';
 
 import Page from '../../components/Layout/Page';
 
-import OverviewScreen from './OverviewScreen';
-import ArchiveScreen from './ArchiveScreen';
+import OverviewScreen from './Overview';
+import ArchiveScreen from './Archive';
 
 const PageWrapper = styled.View`
 	background-color: red;
