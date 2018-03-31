@@ -30,9 +30,17 @@ const HeaderButton = styled.Image`
 	width: 15;
 `;
 
+const HeaderText = styled.Text`
+	font-family: font-bold;
+	color: ${Color.mainBlack}
+`;
+
 // Return a closure to render the function just once instead of each render (currying)
-function headerNavigate(navigation, route, title) {
+function headerNavigate(navigation, route, title, back) {
 	return function navigate() {
+		if (back) {
+			navigation.goBack();
+		}
 		console.log(navigation.state, title);
 
 		navigation.navigate(route, { title });
@@ -45,33 +53,54 @@ function getHeader(navigation) {
 
 	// Set default to 'overview'
 	if (typeof params === 'undefined' || typeof params.title === 'undefined') {
-		return 'overview'.toUpperCase();
+		// Or just return? e.g. no title
+		return (<HeaderTitle>{'overview'.toUpperCase()}</HeaderTitle>);
 	}
 
 	// Return the title
-	return params.title.toUpperCase();
+	return (<HeaderTitle>{params.title.toUpperCase()}</HeaderTitle>);
 }
 
 const propTypes = {
 	navigation: PropTypes.object.isRequired,
+	showCloseBtn: PropTypes.bool,
+	closeBtnText: PropTypes.string,
+};
+
+const defaultProps = {
+	showCloseBtn: false,
+	closeBtnText: 'close',
 };
 
 function Header(props) {
 	// console.log('Header', props);
 	const {
 		navigation,
+		showCloseBtn,
+		closeBtnText,
 	} = props;
 
 	return (
 		<HeaderWrapper>
-			<ButtonWrapper onPress={headerNavigate(navigation, 'Overview', 'overview')}>
-				<HeaderButton
-					source={Icon.menu}
-					fadeDuration={0}
-				/>
-			</ButtonWrapper>
+			{
+				showCloseBtn ?
+					<ButtonWrapper onPress={headerNavigate(navigation, null, null, 'goBack')}>
+						<HeaderButton
+							source={Icon.close}
+							fadeDuration={0}
+						/>
+						<HeaderText>{closeBtnText}</HeaderText>
+					</ButtonWrapper>
+					:
+					<ButtonWrapper onPress={headerNavigate(navigation, 'Overview', 'overview')}>
+						<HeaderButton
+							source={Icon.menu}
+							fadeDuration={0}
+						/>
+					</ButtonWrapper>
+			}
 
-			<HeaderTitle>{getHeader(navigation)}</HeaderTitle>
+			{getHeader(navigation)}
 
 			<ButtonWrapper onPress={headerNavigate(navigation, 'ItemForm', 'new item')}>
 				<HeaderButton
@@ -84,5 +113,6 @@ function Header(props) {
 }
 
 Header.propTypes = propTypes;
+Header.defaultProps = defaultProps;
 
 export default Header;

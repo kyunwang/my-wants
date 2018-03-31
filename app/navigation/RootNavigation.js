@@ -2,8 +2,8 @@ import React from 'react';
 
 import { StackNavigator } from 'react-navigation';
 
-import HomeScreen from '../routes/Home';
-import ItemFormScreen from '../routes/ItemFormScreen';
+import HomeScreen from '../screens/Home';
+import ItemFormScreen from '../screens/ItemFormScreen';
 
 
 // import HomeTabNav from '../navigation/HomeTabNav';
