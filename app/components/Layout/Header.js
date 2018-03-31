@@ -7,7 +7,7 @@ import Style from '../../constants/Style';
 import Color from '../../constants/Color';
 import Icon from '../../constants/Icon';
 
-import ButtonWrapper from '../Button/ButtonWrapper';
+import ButtonWrapper from '../UI/Button/ButtonWrapper';
 
 const HeaderWrapper = styled.View`
 	flex-direction: row;
@@ -16,9 +16,8 @@ const HeaderWrapper = styled.View`
 
 	width: 100%;
 	height: 50;
-
-	paddingHorizontal: ${Style.spaceHorizontal};
 `;
+	// paddingHorizontal: ${Style.spaceHorizontal};
 
 const HeaderTitle = styled.Text`
 	font-family: font-bold;
@@ -26,8 +25,9 @@ const HeaderTitle = styled.Text`
 `;
 
 const HeaderButton = styled.Image`
-	height: 15;
-	width: 15;
+	height: 15px;
+	width: 15px;
+	margin: 20px;
 `;
 
 const HeaderText = styled.Text`
