@@ -3,13 +3,13 @@ import PropTypes from 'prop-types';
 
 import styled from 'styled-components';
 
-import Color from '../../constants/Color';
-import Style from '../../constants/Style';
+import Color from 'app/constants/Color';
+import Style from 'app/constants/Style';
 
-import Page from '../../components/Layout/Page';
+import Page from 'app/components/Layout/Page';
 
-import InputContainer from '../../components/UI/Form/InputContainer';
-import FormTextInput from '../../components/UI/Form/TextInput';
+import InputContainer from 'app/components/UI/Form/InputContainer';
+import FormTextInput from 'app/components/UI/Form/TextInput';
 
 const ItemFormWrapper = styled.View`
 	flex: 1;

@@ -3,11 +3,11 @@ import PropTypes from 'prop-types';
 
 import styled from 'styled-components';
 
-import Style from '../../constants/Style';
-import Color from '../../constants/Color';
-import Icon from '../../constants/Icon';
+import Style from 'app/constants/Style';
+import Color from 'app/constants/Color';
+import Icon from 'app/constants/Icon';
 
-import ButtonWrapper from '../UI/Button/ButtonWrapper';
+import ButtonWrapper from 'app/components/UI/Button/ButtonWrapper';
 
 const HeaderWrapper = styled.View`
 	flex-direction: row;

@@ -2,11 +2,11 @@ import React from 'react';
 
 import { StackNavigator } from 'react-navigation';
 
-import HomeScreen from '../screens/Home';
-import ItemForm from '../screens/NewForm';
+import HomeScreen from 'app/screens/Home';
+import ItemForm from 'app/screens/NewForm';
 
 
-// import HomeTabNav from '../navigation/HomeTabNav';
+// import HomeTabNav from 'app/navigation/HomeTabNav';
 
 const RootStack = StackNavigator({
 	Overview: {

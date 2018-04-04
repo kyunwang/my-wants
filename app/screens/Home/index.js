@@ -4,10 +4,10 @@ import PropTypes from 'prop-types';
 
 import styled from 'styled-components';
 
-import GLOBAL from '../../config/globals';
-import { testHook } from '../../config/cavy';
+import GLOBAL from 'app/config/globals';
+import { testHook } from 'app/config/cavy';
 
-import Page from '../../components/Layout/Page';
+import Page from 'app/components/Layout/Page';
 
 import OverviewScreen from './Overview';
 import ArchiveScreen from './Archive';

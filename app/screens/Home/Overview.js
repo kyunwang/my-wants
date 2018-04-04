@@ -3,10 +3,10 @@ import PropTypes from 'prop-types';
 
 import styled from 'styled-components';
 
-import { testHook } from '../../config/cavy';
-import Style from '../../constants/Style';
+import { testHook } from 'app/config/cavy';
+import Style from 'app/constants/Style';
 
-import CardActive from '../../components/UI/Card/CardActive';
+import CardActive from 'app/components/UI/Card/CardActive';
 
 const OverviewWrapper = styled.View`
 	justify-content: center;
