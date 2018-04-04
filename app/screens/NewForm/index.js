@@ -1,4 +1,4 @@
-import React, { Component, Fragment } from 'react';
+import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 
 import styled from 'styled-components';
@@ -12,19 +12,13 @@ import InputContainer from '../../components/UI/Form/Container';
 import TextInput from '../../components/UI/Form/TextInput';
 
 const ItemFormWrapper = styled.View`
-	${'' /* background-color: red; */, ''}
 	flex: 1;
 	padding: ${Style.defSpace}px;
 `;
 
-const ItemFormText = styled.Text`
-	font-family: font-regular;
-	color: ${Color.primaryColor};
-`;
-
 const HeaderText = styled.Text`
 	align-self: center;
-	paddingVertical: 36px;
+	padding: 36px 0;
 	color: ${Color.mainBlack};
 	font-family: font-bold;
 	font-weight: 700;

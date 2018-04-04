@@ -29,7 +29,8 @@ function applyMargins(children) {
 			React.cloneElement(child, { containerStyle: { marginLeft: 12 } })));
 	}
 
-	// Return only the child if there is just one. The container should not be used for less than 2 inputs through
+	// Return only the child if there is just one.
+	// The container should not be used for less than 2 inputs through
 	return renderElements;
 }
 
