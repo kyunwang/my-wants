@@ -13,7 +13,7 @@ import { store, persistor } from './app/store';
 
 import RootNavigation from './app/navigation/RootNavigation';
 
-import GLOBAL from './app/helpers/globals';
+import GLOBAL from './app/config/globals';
 
 if (GLOBAL.TEST_ENABLED) {
 	const TestSuites = require('./specs/AppSpec.js');

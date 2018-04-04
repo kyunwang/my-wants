@@ -4,8 +4,8 @@ import PropTypes from 'prop-types';
 
 import styled from 'styled-components';
 
-import GLOBAL from '../../helpers/globals';
-import { testHook } from '../../helpers/cavy';
+import GLOBAL from '../../config/globals';
+import { testHook } from '../../config/cavy';
 
 import Page from '../../components/Layout/Page';
 

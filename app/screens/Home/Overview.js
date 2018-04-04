@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 
 import styled from 'styled-components';
 
-import { testHook } from '../../helpers/cavy';
+import { testHook } from '../../config/cavy';
 import Style from '../../constants/Style';
 
 import CardActive from '../../components/UI/Card/CardActive';
