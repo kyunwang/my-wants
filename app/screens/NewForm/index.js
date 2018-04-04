@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { Component, Fragment } from 'react';
 import PropTypes from 'prop-types';
 
 import styled from 'styled-components';
@@ -8,6 +8,7 @@ import Style from '../../constants/Style';
 
 import Page from '../../components/Layout/Page';
 
+import InputContainer from '../../components/UI/Form/Container';
 import TextInput from '../../components/UI/Form/TextInput';
 
 const ItemFormWrapper = styled.View`
@@ -27,10 +28,12 @@ const HeaderText = styled.Text`
 	color: ${Color.mainBlack};
 	font-family: font-bold;
 	font-weight: 700;
-	font-size: 24px;
+	font-size: 22px;
 	text-align: center;
 	width: 75%;
 `;
+
+// const Button = styled.Button``;
 
 const propTypes = {
 	generateTestHook: PropTypes.func,
@@ -45,16 +48,24 @@ class ItemForm extends Component {
 	static propTypes = propTypes;
 	static defaultProps = defaultProps;
 
+	state = {}
+
 	render() {
-		// console.log('Item form', this.props);
 		const { navigation } = this.props;
 
 		return (
 			<Page navigation={navigation}>
 				<ItemFormWrapper>
 					<HeaderText>What are you saving money for?</HeaderText>
-					<TextInput />
-					<ItemFormText>ItemForm</ItemFormText>
+
+					<TextInput labelName="saving for" />
+					<InputContainer>
+						<TextInput labelName="to save" />
+						<TextInput labelName="already saved" />
+					</InputContainer>
+					<TextInput labelName="category" />
+
+					{/* <Button title="add details" /> */}
 				</ItemFormWrapper>
 			</Page>
 		);
