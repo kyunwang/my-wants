@@ -14,11 +14,6 @@ const PageWrapper = styled.SafeAreaView`
 	padding-top: 5%;
 `;
 
-const PageText = styled.Text`
-	color: gray;
-`;
-
-
 const propTypes = {
 	children: PropTypes.oneOfType([
 		PropTypes.object,
@@ -37,7 +32,6 @@ function Page(props) {
 	return (
 		<PageWrapper>
 			<Header navigation={navigation} />
-			<PageText>Page</PageText>
 			{props.children}
 		</PageWrapper>
 	);
