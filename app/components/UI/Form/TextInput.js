@@ -27,7 +27,7 @@ const Label = styled.Text`
 `;
 
 
-class TextInput extends Component {
+class FormTextInput extends Component {
 	static propTypes = {
 		labelName: PropTypes.string.isRequired,
 	}
@@ -53,4 +53,4 @@ class TextInput extends Component {
 	}
 }
 
-export default TextInput;
+export default FormTextInput;

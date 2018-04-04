@@ -8,8 +8,8 @@ import Style from '../../constants/Style';
 
 import Page from '../../components/Layout/Page';
 
-import InputContainer from '../../components/UI/Form/Container';
-import TextInput from '../../components/UI/Form/TextInput';
+import InputContainer from '../../components/UI/Form/InputContainer';
+import FormTextInput from '../../components/UI/Form/TextInput';
 
 const ItemFormWrapper = styled.View`
 	flex: 1;
@@ -52,12 +52,12 @@ class ItemForm extends Component {
 				<ItemFormWrapper>
 					<HeaderText>What are you saving money for?</HeaderText>
 
-					<TextInput labelName="saving for" />
+					<FormTextInput labelName="saving for" />
 					<InputContainer>
-						<TextInput labelName="to save" />
-						<TextInput labelName="already saved" />
+						<FormTextInput labelName="to save" />
+						<FormTextInput labelName="already saved" />
 					</InputContainer>
-					<TextInput labelName="category" />
+					<FormTextInput labelName="category" />
 
 					{/* <Button title="add details" /> */}
 				</ItemFormWrapper>
