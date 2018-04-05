@@ -10,6 +10,7 @@ import Page from 'app/components/Layout/Page';
 
 import InputContainer from 'app/components/UI/Form/InputContainer';
 import FormTextInput from 'app/components/UI/Form/TextInput';
+import FormPicker from 'app/components/UI/Form/Picker';
 
 const ItemFormWrapper = styled.View`
 	flex: 1;
@@ -42,9 +43,22 @@ class ItemForm extends Component {
 	static propTypes = propTypes;
 	static defaultProps = defaultProps;
 
-	state = {}
+	state = {
+		selectableItems: [
+			'Home',
+			'Hobby',
+			'Software',
+		],
+		selectedItem: '',
+	}
+
+	setCategory = (itemValue, itemIndex) => this.setState({ selectedItem: itemValue });
 
 	render() {
+		const {
+			selectableItems,
+			selectedItem,
+		} = this.state;
 		const { navigation } = this.props;
 
 		return (
@@ -58,6 +72,11 @@ class ItemForm extends Component {
 						<FormTextInput labelName="already saved" />
 					</InputContainer>
 					<FormTextInput labelName="category" />
+					<FormPicker
+						selectableItems={selectableItems}
+						selectedItem={selectedItem}
+						selectCategory={this.setCategory}
+					/>
 
 					{/* <Button title="add details" /> */}
 				</ItemFormWrapper>
