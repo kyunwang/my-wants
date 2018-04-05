@@ -8,5 +8,6 @@ export default {
 	backgroundColor: '#F6F6F9', // Light creme white color
 
 	lightGrey: '#E7E7E7', // For the unfilled bar
+	lightGrey2: '#C8C8C8', // For the textinput border
 };
 

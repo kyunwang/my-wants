@@ -9,8 +9,8 @@ const InputContainer = styled.View`
 	flex: 1;
 	max-height: 55px;
 	margin-bottom: 12px;
-	border-bottom-width: 2px;
-	border-bottom-color: ${Color.lightGrey};
+	border-bottom-width: 1px;
+	border-bottom-color: ${Color.lightGrey2};
 	padding: 0 6px;
 `;
 
@@ -47,7 +47,10 @@ class FormTextInput extends Component {
 		return (
 			<InputContainer style={containerStyle}>
 				<Label>{labelName}</Label>
-				<StyledTextInput maxLength={20} />
+				<StyledTextInput
+					maxLength={20}
+					underlineColorAndroid="transparent"
+				/>
 			</InputContainer>
 		);
 	}
