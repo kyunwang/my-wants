@@ -39,7 +39,7 @@ const HeaderText = styled.Text`
 function headerNavigate(navigation, route, title, back) {
 	return function navigate() {
 		if (back) {
-			navigation.goBack();
+			return navigation.goBack();
 		}
 		console.log(navigation.state, title);
 
@@ -84,7 +84,7 @@ function Header(props) {
 		<HeaderWrapper>
 			{
 				showCloseBtn ?
-					<ButtonWrapper onPress={headerNavigate(navigation, null, null, 'goBack')}>
+					<ButtonWrapper onPress={headerNavigate(navigation, null, null, true)}>
 						<HeaderButton
 							source={Icon.close}
 							fadeDuration={0}

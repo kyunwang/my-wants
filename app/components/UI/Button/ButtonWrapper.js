@@ -3,6 +3,13 @@ import React from 'react';
 import { TouchableOpacity } from 'react-native';
 import PropTypes from 'prop-types';
 
+import styled from 'styled-components';
+
+const ButtonWrap = styled.TouchableOpacity`
+	flex-direction: row;
+	align-items: center;
+`;
+
 const propTypes = {
 	children: PropTypes.oneOfType([
 		PropTypes.object,
@@ -11,10 +18,7 @@ const propTypes = {
 	onPress: PropTypes.func.isRequired,
 };
 
-const defaultProps = {
-	// onPress: () => {},
-};
-
+const defaultProps = {};
 
 function ButtonWrapper(props) {
 	const {
@@ -22,12 +26,12 @@ function ButtonWrapper(props) {
 	} = props;
 
 	return (
-		<TouchableOpacity
+		<ButtonWrap
 			activeOpacity={0.7}
 			onPress={onPress}
 		>
 			{props.children}
-		</TouchableOpacity>
+		</ButtonWrap>
 	);
 }
 

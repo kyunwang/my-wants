@@ -20,6 +20,11 @@ const propTypes = {
 		PropTypes.array,
 	]).isRequired,
 	navigation: PropTypes.object.isRequired,
+	showCloseBtn: PropTypes.bool,
+};
+
+const defaultProps = {
+	showCloseBtn: false,
 };
 
 function Page(props) {
@@ -27,16 +32,18 @@ function Page(props) {
 
 	const {
 		navigation,
+		showCloseBtn,
 	} = props;
 
 	return (
 		<PageWrapper>
-			<Header navigation={navigation} />
+			<Header navigation={navigation} showCloseBtn={showCloseBtn} />
 			{props.children}
 		</PageWrapper>
 	);
 }
 
 Page.propTypes = propTypes;
+Page.defaultProps = defaultProps;
 
 export default Page;
