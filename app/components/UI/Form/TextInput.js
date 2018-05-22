@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 
-import { Animated } from 'react-native';
+import { Animated, ViewPropTypes } from 'react-native';
 
 import styled from 'styled-components';
 
@@ -43,11 +43,14 @@ const AnimatedLabel = Animated.createAnimatedComponent(Label);
 
 class FormTextInput extends Component {
 	static propTypes = {
+		containerStyle: ViewPropTypes.style,
 		labelName: PropTypes.string.isRequired,
+		onChange: PropTypes.func.isRequired,
+		inputName: PropTypes.string.isRequired,
 	}
 
 	static defaultProps = {
-		// labelName: 'label',
+		containerStyle: {},
 	}
 
 	state = {
@@ -57,6 +60,8 @@ class FormTextInput extends Component {
 	}
 
 	onInputFocus = () => {
+		if (this.props.textValue) return;
+
 		const {
 			labelScale,
 			labelPosY,
@@ -64,30 +69,50 @@ class FormTextInput extends Component {
 		} = this.state;
 
 		Animated.parallel([
-
 			Animated.timing(labelScale, {
 				toValue: 0.8,
 				duration: 300,
 				useNativeDriver: true,
 			}),
-
 			Animated.timing(labelPosY, {
 				toValue: -30,
 				duration: 300,
 				useNativeDriver: true,
 			}),
-
 			Animated.timing(labelPosX, {
 				toValue: -12,
 				duration: 300,
 				useNativeDriver: true,
 			}),
-
 		]).start();
 	}
 
 	onEndEditing = () => {
-		console.log('End editing');
+		if (this.props.textValue) return;
+
+		const {
+			labelScale,
+			labelPosY,
+			labelPosX,
+		} = this.state;
+
+		Animated.parallel([
+			Animated.timing(labelScale, {
+				toValue: 1,
+				duration: 300,
+				useNativeDriver: true,
+			}),
+			Animated.timing(labelPosY, {
+				toValue: 0,
+				duration: 300,
+				useNativeDriver: true,
+			}),
+			Animated.timing(labelPosX, {
+				toValue: 0,
+				duration: 300,
+				useNativeDriver: true,
+			}),
+		]).start();
 	}
 
 	render() {
@@ -100,6 +125,8 @@ class FormTextInput extends Component {
 		const {
 			containerStyle,
 			labelName,
+			onChange,
+			inputName,
 		} = this.props;
 
 		return (
@@ -112,13 +139,16 @@ class FormTextInput extends Component {
 							{ translateX: labelPosX },
 						],
 					}}
-				>{labelName}
+				>
+					{labelName}
 				</AnimatedLabel>
 				<StyledTextInput
+					// name={inputName}
 					maxLength={20}
 					underlineColorAndroid="transparent"
 					onFocus={this.onInputFocus}
 					onEndEditing={this.onEndEditing}
+					onChange={onChange(inputName)}
 				/>
 			</InputContainer>
 		);

@@ -15,17 +15,17 @@ function applyMargins(children) {
 	if (children.length > 2) {
 		renderElements = children.map((child, i) => {
 			if (i === 0) {
-				return React.cloneElement(child, { containerStyle: { marginRight: 12 } });
+				return React.cloneElement(child, { key: i, containerStyle: { marginRight: 12 } });
 			} else if (i === (children.length - 1)) {
-				return React.cloneElement(child, { containerStyle: { marginLeft: 12 } });
+				return React.cloneElement(child, { key: i, containerStyle: { marginLeft: 12 } });
 			}
-			return React.cloneElement(child, { containerStyle: { marginHorizontal: 12 } });
+			return React.cloneElement(child, { key: i, containerStyle: { marginHorizontal: 12 } });
 		});
 	} else if (children.length === 2) {
 		renderElements = children.map((child, i) => (i === 0 ?
-			React.cloneElement(child, { containerStyle: { marginRight: 12 } })
+			React.cloneElement(child, { key: i, containerStyle: { marginRight: 12 } })
 			:
-			React.cloneElement(child, { containerStyle: { marginLeft: 12 } })));
+			React.cloneElement(child, { key: i, containerStyle: { marginLeft: 12 } })));
 	}
 
 	// Return only the child if there is just one.

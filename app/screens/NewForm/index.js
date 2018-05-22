@@ -36,7 +36,7 @@ const propTypes = {
 };
 
 const defaultProps = {
-	generateTestHook: () => {},
+	generateTestHook: () => { },
 };
 
 class ItemForm extends Component {
@@ -50,6 +50,17 @@ class ItemForm extends Component {
 			'Software',
 		],
 		selectedItem: '',
+		savingFor: '',
+		toSave: 0,
+		saved: 0,
+		category: '',
+	}
+
+	onChange = name => (e) => {
+		const value = e.nativeEvent.text;
+		this.setState(prevState => ({ [name]: value }), () => {
+			console.log(this.state);
+		});
 	}
 
 	setCategory = (itemValue, itemIndex) => this.setState({ selectedItem: itemValue });
@@ -58,20 +69,45 @@ class ItemForm extends Component {
 		const {
 			selectableItems,
 			selectedItem,
+			savingFor,
+			toSave,
+			saved,
+			category,
 		} = this.state;
+
 		const { navigation } = this.props;
 
 		return (
-			<Page navigation={navigation}>
+			<Page navigation={navigation} showCloseBtn>
 				<ItemFormWrapper>
 					<HeaderText>What are you saving money for?</HeaderText>
 
-					<FormTextInput labelName="saving for" />
+					<FormTextInput
+						inputName="savingFor"
+						labelName="saving for"
+						onChange={this.onChange}
+						textValue={savingFor}
+					/>
 					<InputContainer>
-						<FormTextInput labelName="to save" />
-						<FormTextInput labelName="already saved" />
+						<FormTextInput
+							inputName="toSave"
+							labelName="to save"
+							onChange={this.onChange}
+							textValue={toSave}
+						/>
+						<FormTextInput
+							inputName="saved"
+							labelName="already saved"
+							onChange={this.onChange}
+							textValue={saved}
+						/>
 					</InputContainer>
-					<FormTextInput labelName="category" />
+					<FormTextInput
+						inputName="category"
+						labelName="category"
+						onChange={this.onChange}
+						textValue={category}
+					/>
 					<FormPicker
 						selectableItems={selectableItems}
 						selectedItem={selectedItem}
