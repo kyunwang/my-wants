@@ -47,7 +47,10 @@ class FormTextInput extends Component {
 		labelName: PropTypes.string.isRequired,
 		onChange: PropTypes.func.isRequired,
 		inputName: PropTypes.string.isRequired,
-		textValue: PropTypes.string,
+		textValue: PropTypes.oneOfType([
+			PropTypes.string,
+			PropTypes.number,
+		]),
 		keyboardType: PropTypes.string,
 	}
 
