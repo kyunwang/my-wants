@@ -94,12 +94,14 @@ class ItemForm extends Component {
 							labelName="to save"
 							onChange={this.onChange}
 							textValue={toSave}
+							keyboardType="numeric"
 						/>
 						<FormTextInput
 							inputName="saved"
 							labelName="already saved"
 							onChange={this.onChange}
 							textValue={saved}
+							keyboardType="numeric"
 						/>
 					</InputContainer>
 					<FormTextInput

@@ -32,11 +32,11 @@ const Label = styled.Text`
 	font-size: 18px;
 	text-align: left;
 	letter-spacing: 2px;
-	color: ${Color.primaryColor};
 	position: absolute;
 	bottom: 0;
 	margin-left: 6px;
 	margin-bottom: 6px;
+
 `;
 
 const AnimatedLabel = Animated.createAnimatedComponent(Label);
@@ -47,10 +47,14 @@ class FormTextInput extends Component {
 		labelName: PropTypes.string.isRequired,
 		onChange: PropTypes.func.isRequired,
 		inputName: PropTypes.string.isRequired,
+		textValue: PropTypes.string,
+		keyboardType: PropTypes.string,
 	}
 
 	static defaultProps = {
 		containerStyle: {},
+		keyboardType: 'default',
+		textValue: '',
 	}
 
 	state = {
@@ -127,6 +131,8 @@ class FormTextInput extends Component {
 			labelName,
 			onChange,
 			inputName,
+			keyboardType,
+			textValue,
 		} = this.props;
 
 		return (
@@ -138,6 +144,7 @@ class FormTextInput extends Component {
 							{ translateY: labelPosY },
 							{ translateX: labelPosX },
 						],
+						color: textValue ? Color.primaryColor : Color.lightGrey2,
 					}}
 				>
 					{labelName}
@@ -149,6 +156,7 @@ class FormTextInput extends Component {
 					onFocus={this.onInputFocus}
 					onEndEditing={this.onEndEditing}
 					onChange={onChange(inputName)}
+					keyboardType={keyboardType}
 				/>
 			</InputContainer>
 		);
