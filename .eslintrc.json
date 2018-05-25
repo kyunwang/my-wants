@@ -1,63 +1,35 @@
 {
-	"env": {
-		"browser": false,
-		"es6": true,
-		"node": true
-	},
-	"extends": [
-		"eslint:recommended",
-		"airbnb"
-	],
-	"parser": "babel-eslint",
-	"parserOptions": {
-		"ecmaFeatures": {
-			"experimentalObjectRestSpread": true,
-			"jsx": true,
-			"modules": true
-		},
-		"sourceType": "module"
-	},
-	"plugins": [
-		"react"
-	],
-	"rules": {
-		"indent": [
-			"error",
-			"tab"
-		],
-		"linebreak-style": [
-			"error",
-			"unix"
-		],
-		"quotes": [
-			"error",
-			"single"
-		],
-		"semi": [
-			"error",
-			"always"
-		],
-		"no-tabs": 0,
-		"no-use-before-define": 0,
-		"global-require": 0,
-		// "no-return-assign": [
-		// 	1,
-		// 	"except-parens"
-		// ],
-		// "arrow-parens": [
-		// 	1,
-		// 	"as-needed"
-		// ],
-		"react/jsx-indent": [
-			2,
-			"tab"
-		],
-		"react/prefer-stateless-function": 1,
-		"react/jsx-filename-extension": 0,
-		"react/jsx-indent-props": [
-			2,
-			"tab"
-		],
-		"react/forbid-prop-types": 0
-	}
+  "env": {
+    "browser": false,
+    "es6": true,
+    "node": true
+  },
+  "extends": ["eslint:recommended", "airbnb"],
+  "parser": "babel-eslint",
+  "parserOptions": {
+    "ecmaFeatures": {
+      "experimentalObjectRestSpread": true,
+      "jsx": true,
+      "modules": true
+    },
+    "sourceType": "module"
+  },
+  "plugins": ["react"],
+  "rules": {
+    "indent": ["error", "tab"],
+    "linebreak-style": ["error", "unix"],
+    "quotes": ["error", "single"],
+    "semi": ["error", "always"],
+    "no-tabs": 0,
+    "no-use-before-define": 0,
+    "global-require": 0,
+    "import/no-unresolved": 0,
+    "import/no-extraneous-dependencies": 0,
+    "import/extensions": 0,
+    "react/jsx-indent": [2, "tab"],
+    "react/prefer-stateless-function": 1,
+    "react/jsx-filename-extension": 0,
+    "react/jsx-indent-props": [2, "tab"],
+    "react/forbid-prop-types": 0
+  }
 }
