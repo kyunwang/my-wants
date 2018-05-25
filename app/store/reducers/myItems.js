@@ -4,11 +4,12 @@ import {
 	DELETE_ITEM,
 } from '../actions/constants';
 
-// Honestly can't think of anything better...
+// Honestly can't think of a better name...
 function myItems(state = [], action) {
 	switch (action.type) {
 	case ADD_ITEM:
-		return state;
+		// Return the current state as it was and add the new item to it
+		return [...state, action.formData];
 	case UPDATE_ITEM:
 		return state;
 	case DELETE_ITEM:

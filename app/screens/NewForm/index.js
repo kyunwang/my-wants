@@ -1,7 +1,9 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-
 import styled from 'styled-components';
+
+import { connect } from 'react-redux';
+import { mapDispatchToProps } from 'app/store/tools';
 
 import Color from 'app/constants/Color';
 import Style from 'app/constants/Style';
@@ -11,7 +13,7 @@ import Page from 'app/components/Layout/Page';
 import InputContainer from 'app/components/UI/Form/InputContainer';
 import FormTextInput from 'app/components/UI/Form/TextInput';
 import FormPicker from 'app/components/UI/Form/Picker';
-import ButtonWrapper from 'app/components/UI/Button/Wrapper';
+import Button from 'app/components/UI/Button';
 
 const ItemFormWrapper = styled.View`
 	flex: 1;
@@ -29,11 +31,10 @@ const HeaderText = styled.Text`
 	width: 75%;
 `;
 
-// const Button = styled.Button``;
-
 const propTypes = {
 	generateTestHook: PropTypes.func,
 	navigation: PropTypes.object.isRequired,
+	addItem: PropTypes.func.isRequired,
 };
 
 const defaultProps = {
@@ -54,17 +55,39 @@ class ItemForm extends Component {
 		savingFor: '',
 		toSave: 0,
 		saved: 0,
-		category: '',
+
+	}
+
+	componentDidMount() {
+		console.log('newform props:', this.props);
 	}
 
 	onChange = name => (e) => {
 		const value = e.nativeEvent.text;
-		this.setState(prevState => ({ [name]: value }), () => {
-			console.log(this.state);
-		});
+		this.setState(prevState => ({ [name]: value }));
 	}
 
 	setCategory = (itemValue, itemIndex) => this.setState({ selectedItem: itemValue });
+
+	saveItem = () => {
+		const {
+			savingFor,
+			toSave,
+			saved,
+		} = this.state;
+		console.log('Saving item');
+		// Need to return feedback
+		if (!savingFor) return;
+		if (!toSave) return;
+
+		const newItem = {
+			savingFor,
+			toSave,
+			saved,
+		};
+
+		this.props.addItem(newItem);
+	}
 
 	render() {
 		const {
@@ -105,23 +128,29 @@ class ItemForm extends Component {
 							keyboardType="numeric"
 						/>
 					</InputContainer>
-					<FormTextInput
-						inputName="category"
-						labelName="category"
-						onChange={this.onChange}
-						textValue={category}
-					/>
+
 					{/* <FormPicker
 						selectableItems={selectableItems}
 						selectedItem={selectedItem}
 						selectCategory={this.setCategory}
 					/> */}
 
-					<ButtonWrapper title="add details" />
+					<Button
+						style={{
+							height: 50,
+							width: '100%',
+							backgroundColor: Color.primaryColor,
+							borderRadius: 3,
+							justifyContent: 'center',
+							alignSelf: 'flex-end',
+						}}
+						title="Save Item"
+						onPress={this.saveItem}
+					/>
 				</ItemFormWrapper>
 			</Page>
 		);
 	}
 }
 
-export default ItemForm;
+export default connect(({ myItems }) => ({ myItems }), mapDispatchToProps)(ItemForm);

@@ -4,7 +4,13 @@ import {
 	DELETE_ITEM,
 } from './constants';
 
+const uuidv1 = require('uuid/v1');
+
+
 function addItem(formData) {
+	// Assign an id to the item
+	formData.id = uuidv1();
+
 	return {
 		type: ADD_ITEM,
 		formData,
