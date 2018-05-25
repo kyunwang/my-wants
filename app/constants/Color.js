@@ -1,6 +1,7 @@
 export default {
 	primaryColor: '#6CACF7', // Blue tint
 	mainBlack: '#3F3F3F', // Main text black
+	mainWhite: '#fafafa',
 	secColor: '#9B9B9B', // Secondary text grey
 
 	secText: '#9B9B9B', // Darkish grey
