@@ -8,6 +8,8 @@ import styled from 'styled-components';
 const ButtonWrap = styled.TouchableOpacity`
 	flex-direction: row;
 	align-items: center;
+	max-width: 55px;
+	overflow: visible;
 `;
 
 const propTypes = {

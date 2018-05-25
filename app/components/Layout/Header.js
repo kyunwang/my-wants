@@ -10,29 +10,31 @@ import Icon from 'app/constants/Icon';
 import ButtonWrapper from 'app/components/UI/Button/ButtonWrapper';
 
 const HeaderWrapper = styled.View`
-	flex-direction: row;
-	align-items: center;
-	justify-content: space-between;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
 
-	width: 100%;
-	height: 50;
+  width: 100%;
+  height: 50;
 `;
-	// paddingHorizontal: ${Style.defSpace};
+// paddingHorizontal: ${Style.defSpace};
 
 const HeaderTitle = styled.Text`
-	font-family: font-bold;
-	color: ${Color.secColor};
+  font-family: font-bold;
+  color: ${Color.secColor};
+  flex: 1;
+  text-align: center;
 `;
 
 const HeaderButton = styled.Image`
-	height: 15px;
-	width: 15px;
-	margin: ${Style.defSpace}px;
+  height: 15px;
+  width: 15px;
+  margin: ${Style.defSpace}px;
 `;
 
 const HeaderText = styled.Text`
-	font-family: font-bold;
-	color: ${Color.mainBlack}
+  font-family: font-bold;
+  color: ${Color.mainBlack};
 `;
 
 // Return a closure to render the function just once instead of each render (currying)
@@ -54,11 +56,11 @@ function getHeader(navigation) {
 	// Set default to 'overview'
 	if (typeof params === 'undefined' || typeof params.title === 'undefined') {
 		// Or just return? e.g. no title
-		return (<HeaderTitle>{'overview'.toUpperCase()}</HeaderTitle>);
+		return <HeaderTitle>{'overview'.toUpperCase()}</HeaderTitle>;
 	}
 
 	// Return the title
-	return (<HeaderTitle>{params.title.toUpperCase()}</HeaderTitle>);
+	return <HeaderTitle>{params.title.toUpperCase()}</HeaderTitle>;
 }
 
 const propTypes = {
@@ -74,39 +76,29 @@ const defaultProps = {
 
 function Header(props) {
 	// console.log('Header', props);
-	const {
-		navigation,
-		showCloseBtn,
-		closeBtnText,
-	} = props;
+	const { navigation, showCloseBtn, closeBtnText } = props;
 
 	return (
 		<HeaderWrapper>
-			{
-				showCloseBtn ?
-					<ButtonWrapper onPress={headerNavigate(navigation, null, null, true)}>
-						<HeaderButton
-							source={Icon.close}
-							fadeDuration={0}
-						/>
-						<HeaderText>{closeBtnText}</HeaderText>
-					</ButtonWrapper>
-					:
-					<ButtonWrapper onPress={headerNavigate(navigation, 'Overview', 'overview')}>
-						<HeaderButton
-							source={Icon.menu}
-							fadeDuration={0}
-						/>
-					</ButtonWrapper>
-			}
+			{showCloseBtn ? (
+				<ButtonWrapper onPress={headerNavigate(navigation, null, null, true)}>
+					<HeaderButton source={Icon.close} fadeDuration={0} />
+					<HeaderText>{closeBtnText}</HeaderText>
+				</ButtonWrapper>
+			) : (
+				<ButtonWrapper
+					onPress={headerNavigate(navigation, 'Overview', 'overview')}
+				>
+					<HeaderButton source={Icon.menu} fadeDuration={0} />
+				</ButtonWrapper>
+			)}
 
 			{getHeader(navigation)}
 
-			<ButtonWrapper onPress={headerNavigate(navigation, 'ItemForm', 'new item')}>
-				<HeaderButton
-					source={Icon.add}
-					fadeDuration={0}
-				/>
+			<ButtonWrapper
+				onPress={headerNavigate(navigation, 'ItemForm', 'new item')}
+			>
+				<HeaderButton source={Icon.add} fadeDuration={0} />
 			</ButtonWrapper>
 		</HeaderWrapper>
 	);
