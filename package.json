@@ -7,9 +7,9 @@
   "private": true,
   "scripts": {
     "start": "exp start",
-    "start:c": "exp start -c",
-    "run:android": "exp android",
-    "run:ios": "exp ios"
+    "start:cache": "exp start -c",
+    "android": "exp android",
+    "ios": "exp ios"
   },
   "repository": {
     "type": "git",
