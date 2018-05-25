@@ -8,7 +8,6 @@ import styled from 'styled-components';
 const ButtonWrap = styled.TouchableOpacity`
 	flex-direction: row;
 	align-items: center;
-	max-width: 55px;
 	overflow: visible;
 `;
 
@@ -22,13 +21,15 @@ const propTypes = {
 
 const defaultProps = {};
 
-function ButtonWrapper(props) {
+function Wrapper(props) {
 	const {
 		onPress,
+		style,
 	} = props;
 
 	return (
 		<ButtonWrap
+			style={style}
 			activeOpacity={0.7}
 			onPress={onPress}
 		>
@@ -37,7 +38,7 @@ function ButtonWrapper(props) {
 	);
 }
 
-ButtonWrapper.propTypes = propTypes;
-ButtonWrapper.defaultProps = defaultProps;
+Wrapper.propTypes = propTypes;
+Wrapper.defaultProps = defaultProps;
 
-export default ButtonWrapper;
+export default Wrapper;

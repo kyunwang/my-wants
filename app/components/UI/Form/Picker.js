@@ -30,7 +30,7 @@ function FormPicker(props) {
 			selectedValue={selectedItem}
 			onValueChange={selectCategory}
 		>
-			{selectableItems.map(item => (<Picker.Item label={item.charAt(0) + item.substr(1)} value={item} />))}
+			{selectableItems.map((item, i) => (<Picker.Item key={i} label={item.charAt(0) + item.substr(1)} value={item} />))}
 		</Picker>
 	);
 }

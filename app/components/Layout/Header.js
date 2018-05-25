@@ -7,7 +7,7 @@ import Style from 'app/constants/Style';
 import Color from 'app/constants/Color';
 import Icon from 'app/constants/Icon';
 
-import ButtonWrapper from 'app/components/UI/Button/ButtonWrapper';
+import ButtonWrapper from 'app/components/UI/Button/Wrapper';
 
 const HeaderWrapper = styled.View`
   flex-direction: row;
@@ -81,12 +81,16 @@ function Header(props) {
 	return (
 		<HeaderWrapper>
 			{showCloseBtn ? (
-				<ButtonWrapper onPress={headerNavigate(navigation, null, null, true)}>
+				<ButtonWrapper
+					style={{ maxWidth: 55 }}
+					onPress={headerNavigate(navigation, null, null, true)}
+				>
 					<HeaderButton source={Icon.close} fadeDuration={0} />
 					<HeaderText>{closeBtnText}</HeaderText>
 				</ButtonWrapper>
 			) : (
 				<ButtonWrapper
+					style={{ maxWidth: 55 }}
 					onPress={headerNavigate(navigation, 'Overview', 'overview')}
 				>
 					<HeaderButton source={Icon.menu} fadeDuration={0} />
@@ -96,6 +100,7 @@ function Header(props) {
 			{getHeader(navigation)}
 
 			<ButtonWrapper
+				style={{ maxWidth: 55 }}
 				onPress={headerNavigate(navigation, 'ItemForm', 'new item')}
 			>
 				<HeaderButton source={Icon.add} fadeDuration={0} />

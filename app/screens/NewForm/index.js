@@ -11,6 +11,7 @@ import Page from 'app/components/Layout/Page';
 import InputContainer from 'app/components/UI/Form/InputContainer';
 import FormTextInput from 'app/components/UI/Form/TextInput';
 import FormPicker from 'app/components/UI/Form/Picker';
+import ButtonWrapper from 'app/components/UI/Button/Wrapper';
 
 const ItemFormWrapper = styled.View`
 	flex: 1;
@@ -110,13 +111,13 @@ class ItemForm extends Component {
 						onChange={this.onChange}
 						textValue={category}
 					/>
-					<FormPicker
+					{/* <FormPicker
 						selectableItems={selectableItems}
 						selectedItem={selectedItem}
 						selectCategory={this.setCategory}
-					/>
+					/> */}
 
-					{/* <Button title="add details" /> */}
+					<ButtonWrapper title="add details" />
 				</ItemFormWrapper>
 			</Page>
 		);
