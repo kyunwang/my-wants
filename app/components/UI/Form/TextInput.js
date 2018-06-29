@@ -147,7 +147,7 @@ class FormTextInput extends Component {
 							{ translateY: labelPosY },
 							{ translateX: labelPosX },
 						],
-						color: textValue ? Color.primaryColor : Color.lightGrey2,
+						color: textValue ? Color.mainColor : Color.lightGrey2,
 					}}
 				>
 					{labelName}

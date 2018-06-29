@@ -1,6 +1,11 @@
+import { Dimensions } from 'react-native';
 
-const GlobalTests = {
+const { width, height } = Dimensions.get('window');
+
+const globals = {
 	TEST_ENABLED: false,
+	width,
+	height,
 };
 
-module.exports = { ...GlobalTests };
+module.exports = { ...globals };
