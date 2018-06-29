@@ -6,36 +6,41 @@ import styled from 'styled-components';
 import { testHook } from 'app/config/cavy';
 import Style from 'app/constants/Style';
 
+import Card from 'app/components/UI/Card';
 import CardActive from 'app/components/UI/Card/CardActive';
 
 const OverviewWrapper = styled.View`
+	flex: 1;
 	justify-content: center;
 	align-items: center;
-	height: 300px;
 	width: 100%;
-	background-color: red;
-
 `;
 
 const OverviewText = styled.Text`
-	color: blue;
 `;
 
-const CardListWrapper = styled.View`
+const CardListWrapper = styled.ScrollView`
+	height: 100%;
 	width: 100%;
 	paddingHorizontal: ${Style.defSpace}
 `;
 
-function Overview() {
-	return (
-		<OverviewWrapper>
-			<OverviewText>Overview</OverviewText>
+class Overview extends Component {
+	state = {}
 
-			<CardListWrapper>
-				<CardActive />
-			</CardListWrapper>
-		</OverviewWrapper>
-	);
+	mapItems = items => items.map((item, index) => (<Card style={{ }} key={item.id} data={item} />))
+
+	render() {
+		const { myItems } = this.props;
+
+		return (
+			<OverviewWrapper>
+				<CardListWrapper>
+					{ this.mapItems(myItems) }
+				</CardListWrapper>
+			</OverviewWrapper>
+		);
+	}
 }
 
 export default testHook(Overview);

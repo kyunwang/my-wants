@@ -5,6 +5,7 @@ import styled from 'styled-components';
 import { connect } from 'react-redux';
 import { mapDispatchToProps } from 'app/store/tools';
 
+import globals from 'app/config/globals';
 import Color from 'app/constants/Color';
 import Style from 'app/constants/Style';
 
@@ -22,7 +23,8 @@ const ItemFormWrapper = styled.View`
 
 const HeaderText = styled.Text`
 	align-self: center;
-	padding: 36px 0;
+	padding: 36px
+		0;
 	color: ${Color.mainBlack};
 	font-family: font-bold;
 	font-weight: 700;
@@ -32,13 +34,20 @@ const HeaderText = styled.Text`
 `;
 
 const propTypes = {
-	generateTestHook: PropTypes.func,
-	navigation: PropTypes.object.isRequired,
-	addItem: PropTypes.func.isRequired,
+	generateTestHook:
+		PropTypes.func,
+	navigation:
+		PropTypes
+			.object
+			.isRequired,
+	addItem:
+		PropTypes
+			.func
+			.isRequired,
 };
 
 const defaultProps = {
-	generateTestHook: () => { },
+	generateTestHook: () => {},
 };
 
 class ItemForm extends Component {
@@ -55,17 +64,13 @@ class ItemForm extends Component {
 		savingFor: '',
 		toSave: 0,
 		saved: 0,
-
-	}
-
-	componentDidMount() {
-		console.log('newform props:', this.props);
-	}
+		category: 'Default',
+	};
 
 	onChange = name => (e) => {
 		const value = e.nativeEvent.text;
 		this.setState(prevState => ({ [name]: value }));
-	}
+	};
 
 	setCategory = (itemValue, itemIndex) => this.setState({ selectedItem: itemValue });
 
@@ -77,8 +82,14 @@ class ItemForm extends Component {
 		} = this.state;
 		console.log('Saving item');
 		// Need to return feedback
-		if (!savingFor) return;
-		if (!toSave) return;
+		if (!savingFor) {
+			return;
+		} if (!toSave) {
+			return;
+		}
+
+		console.log('Success');
+
 
 		const newItem = {
 			savingFor,
@@ -86,8 +97,11 @@ class ItemForm extends Component {
 			saved,
 		};
 
+		console.log(newItem);
+
+
 		this.props.addItem(newItem);
-	}
+	};
 
 	render() {
 		const {
@@ -99,11 +113,18 @@ class ItemForm extends Component {
 			category,
 		} = this.state;
 
-		const { navigation } = this.props;
+		const {
+			navigation,
+		} = this.props;
 
 		return (
-			<Page navigation={navigation} showCloseBtn>
-				<ItemFormWrapper>
+			<Page
+				navigation={
+					navigation
+				}
+				showCloseBtn
+			>
+				<ItemFormWrapper >
 					<HeaderText>What are you saving money for?</HeaderText>
 
 					<FormTextInput
@@ -112,7 +133,7 @@ class ItemForm extends Component {
 						onChange={this.onChange}
 						textValue={savingFor}
 					/>
-					<InputContainer>
+					<InputContainer >
 						<FormTextInput
 							inputName="toSave"
 							labelName="to save"
@@ -134,23 +155,28 @@ class ItemForm extends Component {
 						selectedItem={selectedItem}
 						selectCategory={this.setCategory}
 					/> */}
-
-					<Button
-						style={{
-							height: 50,
-							width: '100%',
-							backgroundColor: Color.primaryColor,
-							borderRadius: 3,
-							justifyContent: 'center',
-							alignSelf: 'flex-end',
-						}}
-						title="Save Item"
-						onPress={this.saveItem}
-					/>
 				</ItemFormWrapper>
+
+				<Button
+					style={{
+						height: 50,
+						width: globals.width - 36,
+						backgroundColor: Color.mainColor,
+						justifyContent: 'center',
+						alignSelf: 'center',
+						marginBottom: 24,
+						borderRadius: 3,
+						elevation: 3,
+					}}
+					title="Save Item"
+					onPress={this.saveItem}
+				/>
 			</Page>
 		);
 	}
 }
 
-export default connect(({ myItems }) => ({ myItems }), mapDispatchToProps)(ItemForm);
+export default connect(
+	({ myItems }) => ({ myItems }),
+	mapDispatchToProps,
+)(ItemForm);
