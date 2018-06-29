@@ -3,7 +3,7 @@ A application to keep track of what you want to buy. (Name is debatable)
 
 The back-end for the application - [my-wants-server][server]
 
-In this document I record my process and decisions of the making of this application.
+In this document I record my process and decisions of the making of this application. Like why I choosed Expo for example.
 
 **Progress/Trello: [Here][trello]**
 
@@ -12,6 +12,8 @@ In this document I record my process and decisions of the making of this applica
 [Here a link][anim1proto] to a small prototype for a animation
 
 ## Table of content
+
+- [Getting Started](#getting-started)
 
 - [Minimal functionality](#minimal-functionality)
 - [Sitemap (Draft)](#sitemap-draft)
@@ -27,6 +29,15 @@ In this document I record my process and decisions of the making of this applica
 	- [Setting up a Router](#setting-up-a-router)
 	- [Redux](#redux)
 
+
+## Getting Started
+How to get started with this project.
+
+1. Clone this repo with `https://github.com/kyunwang/my-wants.git` or download it
+1. Go to the map with yout terminal of choice and run `npm install`
+1. Run `npm start` to start the expo server
+1. Open another terminal and run `npm run ios` or `npm run android`
+1. You are ready to go coding! Happy Coding!
 
 ## Minimal Functionality
 The minimal function wanted/needed for this application are:
@@ -80,7 +91,7 @@ The choices/considerations:
 As I have noted before, I already have some experience with *React-Native* and will choose it to make this application.
 The decisions is made, because I want to strengthen my foundation (at it), before delving into other Languages/Frameworks.
 
-**Create-react-native-app(Expo)** will be used as the foundation for this application as it saves some time setting up and you can eject it when needed. Expo does have the constrain that you can only use JavaScript for the application and not Natively linked packages. As said you can eject whenever needed. Also, another reason for using Expo is that *upgrading React-Native is hellish* and this will make it much easier.
+**Expo** will be used as the foundation for this application as it saves some time setting up and you can eject it when needed. Expo does have the constrain that you can only use JavaScript for the application and not Natively linked packages. As said you can eject whenever needed. Also, another reason for using Expo is that *upgrading React-Native is hellish* and this will make it much easier.
 
 ### Back-end
 These are the storage options I am considering. Some of the options are local and some are with a server.
@@ -116,8 +127,6 @@ Need to research how to have offline support.
 - [Pusher][pusher]
 - [FastLane][fastlane]
 - [Visual Studio App Center][app-center]
-- [](#)
-- [](#)
 
 **Analytics options:**
 - [google-analytics][google-analytics]
@@ -127,8 +136,8 @@ Need to research how to have offline support.
 **Testing:**
 - [Cavy][cavy] Looks neat (E2E testing]
 - [Jest][jest)]
-- [Enzyme]
-- [Mocha/Chai]
+- Enzyme
+- Mocha/Chai
 
 
 First question: *What do I want to test? Do I even need tests here?*
