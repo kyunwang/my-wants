@@ -28,6 +28,7 @@ In this document I record my process and decisions of the making of this applica
 	- [Setting up Cavy](#setting-up-cavy)
 	- [Setting up a Router](#setting-up-a-router)
 	- [Redux](#redux)
+- [Opinions](#opinions)
 
 
 ## Getting Started
@@ -385,6 +386,20 @@ function myItems(state = [], action) {
 `action` is what we returned in the Action
 
 <!-- `myItems` is our `store` for the items. We can also make another one  -->
+
+
+
+
+## Opinions
+
+### Styled components
+
+**Likes**
+- Just CSS
+
+
+**Dislikes**
+- Cluttering if you break up your components
 
 
 
