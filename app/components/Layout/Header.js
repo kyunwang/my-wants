@@ -43,10 +43,8 @@ function headerNavigate(navigation, route, title, back) {
 		if (back) {
 			return navigation.goBack();
 		}
-		console.log(navigation.state, title);
 
 		navigation.navigate(route, { title });
-		// navigation.setParams({ title });
 	};
 }
 
@@ -75,7 +73,6 @@ const defaultProps = {
 };
 
 function Header(props) {
-	// console.log('Header', props);
 	const { navigation, showCloseBtn, closeBtnText } = props;
 
 	return (
